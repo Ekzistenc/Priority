@@ -171,7 +171,7 @@ module.exports = window["wp"]["element"];
   \****************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/single-new-grid","version":"0.1.0","title":"Колонки новости","category":"snd-blocks","icon":"align-left","example":{},"parent":["snd/single-new"],"attributes":{"text":{"type":"string","default":""},"thumbnailUrl":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/single-new-grid","version":"0.1.0","title":"Колонки новости","category":"snd-theme","icon":"align-left","example":{},"parent":["snd/single-new"],"attributes":{"text":{"type":"string","default":""},"thumbnailUrl":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ }
 

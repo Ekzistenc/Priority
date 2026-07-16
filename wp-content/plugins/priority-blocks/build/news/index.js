@@ -23,7 +23,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Edit({}) {
+function Edit({
+  attributes
+}) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
       className: 'sd-news'
@@ -129,7 +131,7 @@ module.exports = window["wp"]["serverSideRender"];
   \*****************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/news","version":"0.1.0","title":"Новости","category":"snd-blocks","icon":"grid-view","example":{},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","render":"file:./render.php","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/news","version":"0.1.0","title":"Новости","category":"snd-theme","icon":"grid-view","example":{},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","render":"file:./render.php","style":"file:./style-index.css"}');
 
 /***/ }
 

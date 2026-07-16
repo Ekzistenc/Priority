@@ -4,7 +4,7 @@
 	"name": "snd/single-new",
 	"version": "0.1.0",
 	"title": "Обертка новости",
-	"category": "snd-blocks",
+	"category": "snd-theme",
 	"icon": "visibility",
 	"example": {},
 	"supports": {

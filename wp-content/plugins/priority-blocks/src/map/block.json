@@ -44,6 +44,10 @@
 		"showMap": {
 			"type": "boolean",
 			"default": true
+		},
+		"align": {
+			"type": "string",
+			"default": "full"
 		}
 	},
 	"supports": {

@@ -4,7 +4,7 @@
 	"name": "snd/breadcrumbs",
 	"version": "0.1.0",
 	"title": "Хлебные крошки",
-	"category": "snd-blocks",
+	"category": "snd-theme",
 	"icon": "ellipsis",
 	"example": {},
 	"supports": {

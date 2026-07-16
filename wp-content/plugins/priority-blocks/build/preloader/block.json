@@ -4,7 +4,7 @@
   "name": "snd/preloader",
   "version": "0.1.0",
   "title": "Прелоадер",
-  "category": "snd-blocks",
+  "category": "snd-theme",
   "icon": "welcome-view-site",
   "example": {},
   "supports": {

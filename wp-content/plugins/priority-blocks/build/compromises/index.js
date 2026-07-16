@@ -7686,30 +7686,14 @@ function Edit({
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
                           className: "components-base-control__label-media-button",
                           children: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435"
-                        }), slider[index]?.image1?.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        }), slider[index]?.image1?.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                             className: "components-base-control__media-preview",
                             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
                               src: slider[index].image1.url,
                               alt: slider[index].image1.alt
                             })
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-                            __nextHasNoMarginBottom: true,
-                            checked: slider[index]?.image1?.is_preview,
-                            label: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u043A\u0430\u043A \u043F\u0440\u0435\u0432\u044C\u044E",
-                            onChange: () => {
-                              const image_01 = {
-                                ...slider[index].image1,
-                                is_preview: !slider[index].image1.is_preview
-                              };
-                              const image_02 = {
-                                ...slider[index].image2,
-                                is_preview: !slider[index].image2.is_preview
-                              };
-                              onChangeSliderItem(index, image_01, 'image1');
-                              onChangeSliderItem(index, image_02, 'image2');
-                            }
-                          })]
+                          })
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                           className: "components-base-control__media-buttons",
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
@@ -7761,30 +7745,14 @@ function Edit({
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
                           className: "components-base-control__label-media-button",
                           children: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435"
-                        }), slider[index]?.image2?.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        }), slider[index]?.image2?.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                             className: "components-base-control__media-preview",
                             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
                               src: slider[index].image2.url,
                               alt: slider[index].image2.alt
                             })
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-                            __nextHasNoMarginBottom: true,
-                            checked: slider[index]?.image2?.is_preview,
-                            label: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u043A\u0430\u043A \u043F\u0440\u0435\u0432\u044C\u044E",
-                            onChange: () => {
-                              const image_01 = {
-                                ...slider[index].image1,
-                                is_preview: !slider[index].image1.is_preview
-                              };
-                              const image_02 = {
-                                ...slider[index].image2,
-                                is_preview: !slider[index].image2.is_preview
-                              };
-                              onChangeSliderItem(index, image_01, 'image1');
-                              onChangeSliderItem(index, image_02, 'image2');
-                            }
-                          })]
+                          })
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                           className: "components-base-control__media-buttons",
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
@@ -7809,6 +7777,22 @@ function Edit({
                         })]
                       })
                     })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+                    __nextHasNoMarginBottom: true,
+                    checked: slider[index]?.image2?.is_preview,
+                    label: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u0432\u0442\u043E\u0440\u043E\u0435 \u0444\u043E\u0442\u043E, \u043A\u0430\u043A \u043F\u0440\u0435\u0432\u044C\u044E",
+                    onChange: value => {
+                      const image_01 = {
+                        ...slider[index].image1,
+                        is_preview: !value
+                      };
+                      const image_02 = {
+                        ...slider[index].image2,
+                        is_preview: value
+                      };
+                      onChangeSliderItem(index, image_01, 'image1');
+                      onChangeSliderItem(index, image_02, 'image2');
+                    }
                   })]
                 })
               }, index)), provided.placeholder, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {

@@ -4,7 +4,7 @@
 	"name": "snd/single-new-grid",
 	"version": "0.1.0",
 	"title": "Колонки новости",
-	"category": "snd-blocks",
+	"category": "snd-theme",
 	"icon": "align-left",
 	"example": {},
 	"parent": [ "snd/single-new" ],

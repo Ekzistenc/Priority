@@ -6,4 +6,31 @@
 			}
 		}
 	}
+
+	.sd-map__text {
+		.block-editor-inner-blocks {
+			height: 100%;
+
+			.block-editor-block-list__layout {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				height: 100%;
+			}
+		}
+
+		.wp-block-heading {
+			margin-bottom: auto;
+		}
+
+		.wp-block-heading + .wp-block-paragraph {
+			margin-top: 20px;
+		}
+
+		.wp-block-paragraph {
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+	}
 }

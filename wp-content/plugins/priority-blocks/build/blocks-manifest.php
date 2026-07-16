@@ -150,7 +150,7 @@ return array(
 		'name' => 'snd/breadcrumbs',
 		'version' => '0.1.0',
 		'title' => 'Хлебные крошки',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'ellipsis',
 		'example' => array(
 			
@@ -402,7 +402,7 @@ return array(
 		'name' => 'snd/footer',
 		'version' => '0.1.0',
 		'title' => 'FOOTER',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'editor-table',
 		'example' => array(
 			
@@ -462,7 +462,7 @@ return array(
 		'name' => 'snd/header',
 		'version' => '0.1.0',
 		'title' => 'HEADER',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'menu-alt3',
 		'example' => array(
 			
@@ -513,7 +513,7 @@ return array(
 		'name' => 'snd/header-page',
 		'version' => '0.1.0',
 		'title' => 'HEADER for Pages',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'menu-alt2',
 		'example' => array(
 			
@@ -848,6 +848,10 @@ return array(
 			'showMap' => array(
 				'type' => 'boolean',
 				'default' => true
+			),
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
 			)
 		),
 		'supports' => array(
@@ -874,7 +878,7 @@ return array(
 		'name' => 'snd/modal',
 		'version' => '0.1.0',
 		'title' => 'Модальное окно',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'button',
 		'attributes' => array(
 			'image_logo' => array(
@@ -918,7 +922,7 @@ return array(
 		'name' => 'snd/news',
 		'version' => '0.1.0',
 		'title' => 'Новости',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'grid-view',
 		'example' => array(
 			
@@ -939,7 +943,7 @@ return array(
 		'name' => 'snd/preloader',
 		'version' => '0.1.0',
 		'title' => 'Прелоадер',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'welcome-view-site',
 		'example' => array(
 			
@@ -1036,7 +1040,7 @@ return array(
 		'name' => 'snd/single-new',
 		'version' => '0.1.0',
 		'title' => 'Обертка новости',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'visibility',
 		'example' => array(
 			
@@ -1056,7 +1060,7 @@ return array(
 		'name' => 'snd/single-new-grid',
 		'version' => '0.1.0',
 		'title' => 'Колонки новости',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'align-left',
 		'example' => array(
 			

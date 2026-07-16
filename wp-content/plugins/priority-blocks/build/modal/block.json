@@ -4,7 +4,7 @@
   "name": "snd/modal",
   "version": "0.1.0",
   "title": "Модальное окно",
-  "category": "snd-blocks",
+  "category": "snd-theme",
   "icon": "button",
   "attributes": {
     "image_logo": {

@@ -10138,7 +10138,7 @@ function invariant(condition, message) {
   \*******************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/footer","version":"0.1.0","title":"FOOTER","category":"snd-blocks","icon":"editor-table","example":{},"attributes":{"number_phone":{"type":"string","default":"+7 (999) 999-99-99"},"number_phone_href":{"type":"string","default":"+79999999999"},"button":{"type":"object","default":{"text":"Заказать звонок","link":"","target":true,"modal":true,"show":true}},"socs_title":{"type":"string","default":"Соц сети"},"socs":{"type":"array","default":[]},"copyright":{"type":"string","default":""},"links":{"type":"array","default":[]}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/footer","version":"0.1.0","title":"FOOTER","category":"snd-theme","icon":"editor-table","example":{},"attributes":{"number_phone":{"type":"string","default":"+7 (999) 999-99-99"},"number_phone_href":{"type":"string","default":"+79999999999"},"button":{"type":"object","default":{"text":"Заказать звонок","link":"","target":true,"modal":true,"show":true}},"socs_title":{"type":"string","default":"Соц сети"},"socs":{"type":"array","default":[]},"copyright":{"type":"string","default":""},"links":{"type":"array","default":[]}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ }
 

@@ -4,7 +4,7 @@
   "name": "snd/news",
   "version": "0.1.0",
   "title": "Новости",
-  "category": "snd-blocks",
+  "category": "snd-theme",
   "icon": "grid-view",
   "example": {},
   "supports": {

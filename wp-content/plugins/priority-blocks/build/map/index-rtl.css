@@ -4,3 +4,21 @@
 .wp-block-snd-map .container h2 mark {
   background-color: unset;
 }
+.wp-block-snd-map .sd-map__text .block-editor-inner-blocks {
+  height: 100%;
+}
+.wp-block-snd-map .sd-map__text .block-editor-inner-blocks .block-editor-block-list__layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+}
+.wp-block-snd-map .sd-map__text .wp-block-heading {
+  margin-bottom: auto;
+}
+.wp-block-snd-map .sd-map__text .wp-block-heading + .wp-block-paragraph {
+  margin-top: 20px;
+}
+.wp-block-snd-map .sd-map__text .wp-block-paragraph:not(:last-child) {
+  margin-bottom: 20px;
+}
