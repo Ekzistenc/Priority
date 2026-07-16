@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{!function(){const t=document.querySelectorAll('[class*="glightbox"]'),e=new Set;t.forEach(t=>{t.classList.forEach(t=>{/^glightbox\d+$/.test(t)&&e.add("."+t)})}),e.forEach(t=>{GLightbox({selector:t})})}()});

@@ -1,0 +1,274 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"color": {
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"palette": [
+				{
+					"color": "#222435",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#fff",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#b01616",
+					"name": "Accent 1",
+					"slug": "accent-1"
+				},
+				{
+					"color": "#322e49",
+					"name": "Accent 2",
+					"slug": "accent-2"
+				},
+				{
+					"color": "#eedecd",
+					"name": "Base BG",
+					"slug": "base-bg"
+				},
+				{
+					"color": "#eedecd80",
+					"name": "Base BG Mute",
+					"slug": "base-bg-mute"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "1820px",
+			"wideSize": "1920px"
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"spacingSizes": [
+				{
+					"name": "Tiny",
+					"size": "10px",
+					"slug": "tiny"
+				},
+				{
+					"name": "X-Small",
+					"size": "20px",
+					"slug": "x-small"
+				},
+				{
+					"name": "Small",
+					"size": "30px",
+					"slug": "small"
+				},
+				{
+					"name": "Regular",
+					"size": "clamp(30px, 5vw, 50px)",
+					"slug": "regular"
+				},
+				{
+					"name": "Large",
+					"size": "clamp(30px, 7vw, 70px)",
+					"slug": "large"
+				},
+				{
+					"name": "X-Large",
+					"size": "clamp(50px, 7vw, 90px)",
+					"slug": "x-large"
+				},
+				{
+					"name": "XX-Large",
+					"size": "clamp(70px, 10vw, 140px)",
+					"slug": "xx-large"
+				}
+			],
+			"units": [
+				"%",
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw"
+			]
+		},
+		"typography": {
+			"writingMode": true,
+			"defaultFontSizes": false,
+			"fluid": false,
+			"fontFamilies": [
+				{
+					"name": "Onest",
+					"slug": "onest",
+					"fontFamily": "Onest, sans-serif",
+					"fontFace": [
+						{
+							"src": [
+								"file:./assets/fonts/Onest/Onest-VariableFont_wght.ttf"
+							],
+							"fontWeight": "100 900",
+							"fontStyle": "normal",
+							"fontFamily": "Onest"
+						}
+					]
+				},
+				{
+					"name": "Unbounded",
+					"slug": "unbounded",
+					"fontFamily": "Unbounded, sans-serif",
+					"fontFace": [
+						{
+							"src": [
+								"file:./assets/fonts/Unbounded/Unbounded-VariableFont_wght.ttf"
+							],
+							"fontWeight": "200 900",
+							"fontStyle": "normal",
+							"fontFamily": "Unbounded"
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{
+					"fluid": false,
+					"name": "Small",
+					"size": "clamp(0.75rem, 0.125rem + 0.83vw, 1.125rem)",
+					"slug": "small"
+				},
+				{
+					"fluid": false,
+					"name": "Medium",
+					"size": "clamp(1rem, 0.636rem + 1.55vw, 2.5rem)",
+					"slug": "medium"
+				},
+				{
+					"fluid": false,
+					"name": "ExtraMedium",
+					"size": "clamp(0.938rem, -1.667rem + 3.47vw, 2.5rem)",
+					"slug": "x-medium"
+				},
+				{
+					"fluid": false,
+					"name": "Large",
+					"size": "clamp(1.063rem, -3rem + 5.42vw, 3.5rem)",
+					"slug": "large"
+				},
+				{
+					"fluid": false,
+					"name": "Extra Large",
+					"size": "clamp(1.25rem, 0.704rem + 2.33vw, 3.5rem)",
+					"slug": "x-large"
+				},
+				{
+					"fluid": false,
+					"name": "Extra Extra Large",
+					"size": "clamp(1.75rem, 0.9rem + 3.62vw, 5.25rem)",
+					"slug": "xx-large"
+				}
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base-bg",
+			"text": "var:preset|color|base"
+		},
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var:preset|color|accent-2",
+					"text": "var:preset|color|base-bg"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--unbounded)"
+				},
+				":hover": {
+					"css": "opacity: 0.5; transition: 0.3s;"
+				},
+				"border": {
+					"radius": "clamp(0.625rem, 0.549rem + 0.32vw, 0.938rem)"
+				},
+				"spacing": {
+					"padding": {
+						"top": "clamp(0.75rem, 0.629rem + 0.52vw, 1.25rem)",
+						"left": "clamp(0.75rem, 0.629rem + 0.52vw, 1.25rem)",
+						"bottom": "clamp(0.75rem, 0.629rem + 0.52vw, 1.25rem)",
+						"right": "clamp(0.75rem, 0.629rem + 0.52vw, 1.25rem)"
+					}
+				},
+				"css": "text-align: center;"
+			},
+			"caption": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--onest)"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--large)"
+				},
+				"spacing": {
+					"margin": {
+						"bottom": "var(--wp--preset--spacing--x-small)"
+					}
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--x-medium)"
+				},
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--preset--spacing--x-small)",
+						"bottom": "var(--wp--preset--spacing--x-small)"
+					}
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--x-medium)"
+				},
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--preset--spacing--x-small)",
+						"bottom": "var(--wp--preset--spacing--x-small)"
+					}
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)"
+				},
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--preset--spacing--x-small)",
+						"bottom": "var(--wp--preset--spacing--x-small)"
+					}
+				}
+			},
+			"heading": {
+				"color": {
+					"text": "#222435"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--unbounded)",
+					"textTransform": "uppercase"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "#222435"
+				}
+			}
+		},
+		"spacing": {
+			"blockGap": "0px"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--onest)",
+			"fontSize": "var(--wp--preset--font-size--small)"
+		},
+		"css": ":root { --plyr-color-main: #97AF58; --plyr-range-fill-background: #97AF58;}.sd-politic{padding: clamp(3.75rem, -1.458rem + 6.94vw, 6.875rem) 0;} .container {box-sizing: border-box; padding: 0; width: 100%; margin: 0 auto; max-width: 1820px; @media (max-width: 1900px) {padding: 0 50px;} @media (max-width: 1400px) {max-width: 1140px; padding: 0;} @media (max-width: 1199px) {max-width: 960px;} @media (max-width: 991px) {max-width: 720px;} @media (max-width: 767px) {max-width: 540px;} @media (max-width: 575px) {padding: 0 15px;} } .wp-block-post-content{ & > * {max-width: 1820px; width: 100%; margin: 0 auto; &.alignwide {max-width: 1920px;} &.alignfull {max-width: 100%} &.alignleft, &.alignright, &.aligncenter{max-width: max-content;} }"
+	},
+	"version": 3
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/main-swiper-slide",
+  "version": "0.1.1",
+  "title": "Посадочный блок слайд",
+  "category": "snd-blocks",
+  "icon": "format-image",
+  "parent": [
+    "snd/main-swiper-wrapper"
+  ],
+  "example": {
+    "viewportWidth": 1200
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "title_01": {
+      "type": "string",
+      "default": "Единственный дом",
+      "selector": "span"
+    },
+    "title_02": {
+      "type": "string",
+      "default": "бизнес-класса в&nbsp;братске",
+      "selector": "span"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Ипотека от 32 575 рублей в месяц"
+    },
+    "button": {
+      "type": "object",
+      "default": {
+        "name": "Выбрать квартиру",
+        "href": "/",
+        "target": false
+      }
+    },
+    "imageLogo": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "url": "",
+        "alt": "",
+        "size": "full"
+      }
+    },
+    "image": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "url": "",
+        "alt": "",
+        "size": "large",
+        "sizes": {}
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": [
+    "file:./style-index.css"
+  ],
+  "render": "file:./render.php"
+}

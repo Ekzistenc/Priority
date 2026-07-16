@@ -1,0 +1,11 @@
+.sd-header__red {
+	position: unset;
+	padding: 0;
+	background: rgb(177, 34, 45);
+}
+
+.wp-block-template-part {
+	&:has(.sd-header-wrapper) {
+		position: unset !important;
+	}
+}

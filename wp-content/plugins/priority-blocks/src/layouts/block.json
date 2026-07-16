@@ -1,0 +1,66 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/layouts",
+	"version": "0.1.0",
+	"title": "Квартиры",
+	"category": "snd-blocks",
+	"icon": "store",
+	"example": {},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Ваша квартира — <br> это не просто пространство для жизни."
+		},
+		"subtitle": {
+			"type": "string",
+			"default": "Каждая квартира — отдельный мир."
+		},
+		"description": {
+			"type": "string",
+			"default": "Разнообразные планировки — от студий до 6-комнатных квартир..."
+		},
+		"table": {
+			"type": "object",
+			"default": {
+				"count_el": 4,
+				"button_text": "Показать ещё"
+			}
+		},
+		"aftertext": {
+			"type": "string",
+			"default": "Бюро Urban plan, создавшее архитектурную концепцию..."
+		},
+		"image": {
+			"type": "object",
+			"default": {
+				"id": 0,
+				"url": "",
+				"alt": ""
+			}
+		},
+		"textButton": {
+			"type": "string",
+			"default": "Подробнее"
+		},
+		"anchor": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": true,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewStyle": [
+		"glightbox"
+	],
+	"viewScript": [
+		"glightbox",
+		"flats"
+	]
+}

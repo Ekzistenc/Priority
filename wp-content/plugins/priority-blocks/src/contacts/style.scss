@@ -1,0 +1,119 @@
+.sd-contacts {
+	background: rgb(176, 22, 22);
+	padding: clamp(3.125rem, 2.215rem + 3.88vw, 6.875rem) 0;
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	@media (max-width: 991px) {
+		padding-bottom: 0;
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 40px;
+
+		@media (max-width: 991px) {
+			flex-direction: column;
+		}
+
+		h2 {
+			color: rgb(238, 221, 205);
+			font-family: Unbounded;
+			font-size: clamp(1.25rem, 0.704rem + 2.33vw, 3.5rem);
+			font-weight: 500;
+			text-transform: uppercase;
+			margin-bottom: clamp(2.5rem, 2.288rem + 0.91vw, 3.375rem);
+		}
+	}
+
+	.sd-contacts__text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@media (max-width: 991px) {
+			width: 100%;
+		}
+
+		.sd-modal-link {
+			font-family: Unbounded;
+			font-size: clamp(0.875rem, 0.784rem + 0.39vw, 1.25rem);
+			font-weight: 300;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			border-radius: clamp(0.625rem, 0.549rem + 0.32vw, 0.938rem);
+			height: clamp(2.5rem, 2.257rem + 1.04vw, 3.5rem);
+			background: rgb(238, 222, 205);
+			max-width: 312px;
+			width: 100%;
+			margin-top: 50px;
+
+			@media (max-width: 991px) {
+				max-width: 100%;
+			}
+		}
+	}
+
+	.sd-contacts__discription {
+		color: rgb(238, 222, 205);
+		font-size: clamp(1rem, 0.636rem + 1.55vw, 2.5rem);
+		margin-bottom: clamp(1.25rem, 1.204rem + 0.19vw, 1.438rem);
+	}
+
+	.sd-contacts__tel {
+		color: rgb(238, 221, 205);
+		font-family: Unbounded;
+		font-size: clamp(1.25rem, 0.947rem + 1.29vw, 2.5rem);
+		text-transform: uppercase;
+		margin-bottom: clamp(1.875rem, 1.572rem + 1.29vw, 3.125rem);
+	}
+
+	.sd-contacts__map {
+		height: clamp(25.125rem, 18.132rem + 29.84vw, 53.938rem);
+		width: 60%;
+		border-radius: 30px;
+		overflow: hidden;
+
+		@media (max-width: 991px) {
+			width: 100%;
+			border-radius: 30px 30px 0 0;
+		}
+
+		@media (max-width: 540px) {
+			width: calc(100% + 30px);
+		}
+	}
+
+	.sd-footer__socials {
+		display: flex;
+		align-items: center;
+		gap: clamp(0.625rem, 0.579rem + 0.19vw, 0.813rem);
+
+		a {
+			width: clamp(2.5rem, 2.242rem + 1.1vw, 3.563rem);
+			height: clamp(2.5rem, 2.242rem + 1.1vw, 3.563rem);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: rgb(238, 222, 205);
+			border-radius: 10px;
+
+			img {
+				width: clamp(1.313rem, 1.176rem + 0.58vw, 1.875rem);
+				object-fit: contain;
+			}
+		}
+	}
+}

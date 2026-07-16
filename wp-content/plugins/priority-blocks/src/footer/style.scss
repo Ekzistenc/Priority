@@ -1,0 +1,183 @@
+.sd-footer {
+  background: rgb(34, 36, 53);
+  padding: clamp(1.875rem, 0.661rem + 5.18vw, 6.875rem) 0 clamp(1.563rem, 1.183rem + 1.62vw, 3.125rem);
+
+  * {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+	
+	.sd-footer__main {
+		width: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	
+		@media (max-width: 767px) {
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+		}
+	}
+	
+	.sd-footer__logo-box {
+		.sd-footer__logo,
+		.custom-logo,
+		.wp-block-image img {
+			width: clamp(7.313rem, 5.477rem + 7.83vw, 14.875rem) !important;
+		}
+	}
+	
+	.sd-footer__contacts {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	
+		@media (max-width: 767px) {
+			align-items: center;
+			width: 100%;
+		}
+	
+		.sd-modal-link, .sd-button-link {
+			border-radius: clamp(0.625rem, 0.549rem + 0.32vw, 0.938rem);
+			font-family: Unbounded;
+			font-size: clamp(0.938rem, 0.862rem + 0.32vw, 1.25rem);
+			font-weight: 300;
+			text-align: center;
+			background: rgb(238, 222, 205);
+			padding: clamp(0.625rem, 0.549rem + 0.32vw, 0.938rem) 55px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-sizing: border-box;
+			margin-bottom: clamp(1.875rem, 1.723rem + 0.65vw, 2.5rem);
+	
+			@media (max-width: 767px) {
+				width: 100%;
+			}
+		}
+	
+		p {
+			color: rgb(238, 222, 205);
+			font-size: clamp(1rem, 0.939rem + 0.26vw, 1.25rem);
+			margin-bottom: 20px;
+		}
+	}
+	
+	.sd-footer__tel {
+		color: rgb(238, 222, 205);
+		font-family: Unbounded;
+		font-size: clamp(1.563rem, 1.487rem + 0.32vw, 1.875rem);
+		font-weight: 500;
+		text-transform: uppercase;
+		margin-bottom: clamp(1.25rem, 1.098rem + 0.65vw, 1.875rem);
+	}
+	
+	.sd-footer__socials {
+		display: flex;
+		align-items: center;
+		gap: clamp(0.625rem, 0.579rem + 0.19vw, 0.813rem);
+	
+		a {
+			width: clamp(2.5rem, 2.242rem + 1.1vw, 3.563rem);
+			height: clamp(2.5rem, 2.242rem + 1.1vw, 3.563rem);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: rgb(238, 222, 205);
+			border-radius: 10px;
+	
+			img {
+				width: clamp(1.313rem, 1.176rem + 0.58vw, 1.875rem);
+				object-fit: contain;
+			}
+		}
+	}
+	
+	.sd-footer__copy {
+		width: 100%;
+		border-top: 1px solid rgb(238, 222, 205);
+		margin-top: clamp(1.875rem, 1.268rem + 2.59vw, 4.375rem);
+		padding-top: 40px;
+	
+		@media (max-width: 1199px) {
+			// border-top: none;
+			padding-top: 30px;
+		}
+	
+		p {
+			// margin-bottom: clamp(1.875rem, 1.723rem + 0.65vw, 2.5rem);
+			color: rgba(238, 222, 205, 0.5);
+			font-weight: 300;
+			font-size: clamp(0.75rem, 0.438rem + 0.42vw, 0.938rem);
+	
+			@media (max-width: 1199px) {
+				// border-bottom: 1px solid rgb(238, 222, 205);
+				// padding-bottom: 30px;
+			}
+		}
+	}
+	
+	.sd-footer__links {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: clamp(2.5rem, -4.792rem + 9.72vw, 6.875rem);
+	
+		gap: 15px;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-top: 30px;
+	
+		@media (max-width: 767px) {
+			display: none;
+		}
+	
+		a {
+			color: rgba(238, 222, 205, 0.5);
+			font-size: clamp(0.75rem, 0.438rem + 0.42vw, 0.938rem);
+			font-weight: 300;
+		}
+	}
+	
+	.sd-footer__links_mob {
+		display: none;
+	
+		@media (max-width: 767px) {
+			display: flex;
+			width: 100%;
+		}
+	}
+	
+	.sd-politic {
+		padding: clamp(3.75rem, -1.458rem + 6.94vw, 6.875rem) 0;
+	
+		h1 {
+			font-family: Unbounded;
+			font-size: clamp(1.063rem, -3rem + 5.42vw, 3.5rem);
+			font-weight: 500;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+	
+		h2 {
+			margin: 20px 0;
+			font-family: Unbounded;
+			font-size: clamp(0.938rem, -1.667rem + 3.47vw, 2.5rem);
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+	
+		p {
+			font-size: clamp(0.75rem, 0.125rem + 0.83vw, 1.125rem);
+		}
+	}
+}

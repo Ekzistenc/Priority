@@ -1,0 +1,292 @@
+@charset "UTF-8";
+/**
+ * Theme Name:  Priority Theme
+ * Description: Тема для WordPress под заказ
+ *
+ * Author:      Esteticat
+ *
+ *
+ * License:     Лицензия. Пр: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Version:     1.1
+ */
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(238, 222, 205);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(176, 22, 22);
+}
+
+*::-moz-selection {
+  color: rgb(176, 22, 22);
+  background: rgb(34, 36, 53);
+}
+
+*::selection {
+  color: rgb(176, 22, 22);
+  background: rgb(34, 36, 53);
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  overflow-x: hidden;
+  background: rgb(238, 222, 205);
+}
+body.body-overflow {
+  overflow: hidden;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(34, 36, 53);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0.5;
+}
+@media (max-width: 575px) {
+  a:hover {
+    opacity: 1;
+  }
+}
+
+button, input[type=submit] {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: rgb(34, 36, 53);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+button:hover, input[type=submit]:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+.slide-in-left {
+  -webkit-animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.slide-in-left-05 {
+  -webkit-animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+  animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-right {
+  -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.slide-in-right-05 {
+  -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+}
+
+.slide-in-right-1 {
+  -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.fade-in-left {
+  -webkit-animation: fade-in-left 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in-left 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.fade-in-left-05 {
+  -webkit-animation: fade-in-left 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) 0.7s both;
+  animation: fade-in-left 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) 0.7s both;
+}
+
+.fade-in-left-1 {
+  -webkit-animation: fade-in-left 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1.2s both;
+  animation: fade-in-left 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1.2s both;
+}
+
+@-webkit-keyframes fade-in-left {
+  0% {
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-left {
+  0% {
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.fade-in-right {
+  -webkit-animation: fade-in-right 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in-right 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.fade-in-right-05 {
+  -webkit-animation: fade-in-right 1.5ms cubic-bezier(0.39, 0.575, 0.565, 1) 0.7s both;
+  animation: fade-in-right 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) 0.7s both;
+}
+
+.fade-in-right-1 {
+  -webkit-animation: fade-in-right 1.5ms cubic-bezier(0.39, 0.575, 0.565, 1) 1.2s both;
+  animation: fade-in-right 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1.2s both;
+}
+
+@-webkit-keyframes fade-in-right {
+  0% {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-right {
+  0% {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
+
+sw-button .sw-button__wrapper {
+    background-color: var(--wp--preset--color--accent-1) !important;
+}
+
+sw-button {
+	top: auto !important;
+	bottom: 15px !important;
+	right: 10px !important;
+}
+
+@media (max-width: 575px){
+sw-button:after, sw-button:before {
+    border-radius: 30px !important;
+}
+	sw-button .sw-button__wrapper svg {
+		display: none !important;
+	}
+sw-button, sw-button .sw-button__wrapper {
+    border-radius: 30px !important;
+    height: 60px !important;
+    width: 280px !important;
+	}
+}
+
+.wpcf7 form .wpcf7-response-output {
+	    margin: 2em auto 1em;
+}
+.online-iframe {
+	display: flex;
+	}
+@media (max-width: 1199px){
+.online-iframe {
+	margin-top: 0 !important;
+	}
+}
+
+@media (max-width: 540px){
+.online-iframe {
+	border-radius: 0 !important;
+	}
+}
+
+.container .container {
+	padding: 0 !important;
+}
+/* #ot {
+	display: none;
+} */

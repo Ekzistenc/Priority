@@ -1,0 +1,45 @@
+<!-- wp:template-part {"slug":"header","theme":"priority-theme"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|regular","bottom":"var:preset|spacing|regular"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--regular);padding-bottom:var(--wp--preset--spacing--regular)">
+  <!-- wp:group {"className":"container","style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
+  <div class="wp-block-group container"><!-- wp:query-title {"type":"search","textAlign":"left"} /-->
+
+    <!-- wp:search {"label":"Поиск","buttonText":"Поиск"} /-->
+
+    <!-- wp:query {"queryId":12,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":true},"metadata":{"categories":["posts"],"patternName":"core/query-grid-posts","name":"Сетка"}} -->
+    <div class="wp-block-query">
+      <!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"grid","columnCount":3}} -->
+      <!-- wp:group {"style":{"spacing":{"padding":{"top":"30px","right":"30px","bottom":"30px","left":"30px"},"blockGap":"var:preset|spacing|tiny"},"border":{"width":"3px"}},"borderColor":"base","layout":{"inherit":false}} -->
+      <div class="wp-block-group has-border-color has-base-border-color"
+        style="border-width:3px;padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px">
+        <!-- wp:post-title {"isLink":true} /-->
+
+        <!-- wp:post-excerpt /-->
+
+        <!-- wp:post-date /-->
+      </div>
+      <!-- /wp:group -->
+      <!-- /wp:post-template -->
+
+      <!-- wp:query-no-results -->
+      <!-- wp:paragraph {"placeholder":"Добавьте текст или блоки, которые будут отображаться, когда запрос не возвращает результатов."} -->
+      <p>Ничего не найдено</p>
+      <!-- /wp:paragraph -->
+      <!-- /wp:query-no-results -->
+
+      <!-- wp:query-pagination {"paginationArrow":"chevron","showLabel":false,"layout":{"type":"flex","justifyContent":"left"}} -->
+      <!-- wp:query-pagination-previous /-->
+
+      <!-- wp:query-pagination-numbers /-->
+
+      <!-- wp:query-pagination-next /-->
+      <!-- /wp:query-pagination -->
+    </div>
+    <!-- /wp:query -->
+  </div>
+  <!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"priority-theme"} /-->

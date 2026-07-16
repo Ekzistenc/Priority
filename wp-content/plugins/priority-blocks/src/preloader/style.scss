@@ -1,0 +1,39 @@
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: rgb(34, 36, 53);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: clamp(7.313rem, 5.477rem + 7.83vw, 14.875rem) !important;
+    animation-name: logo;
+    animation-duration: 7s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+
+  &-remove {
+    display: none;
+  }
+}
+
+@keyframes logo {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

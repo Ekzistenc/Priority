@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/map",
+  "version": "0.1.1",
+  "title": "Карта",
+  "category": "snd-blocks",
+  "icon": "location-alt",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "attributes": {
+    "title_01": {
+      "type": "string",
+      "default": "Место, где расположен клубный дом, —"
+    },
+    "title_02": {
+      "type": "string",
+      "default": "лучшее место Центрального района."
+    },
+    "image": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "url": "",
+        "alt": ""
+      }
+    },
+    "map": {
+      "type": "array",
+      "default": [
+        {
+          "coordinates_xy": "56.175387, 101.624279",
+          "address": "Первый Приорити, улица Металлургов, 16",
+          "icon": {
+            "id": 0,
+            "url": "",
+            "alt": "",
+            "size": "full"
+          }
+        }
+      ]
+    },
+    "showMap": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": [
+    "ymap",
+    "glightbox",
+    "file:./view.js"
+  ],
+  "viewStyle": [
+    "glightbox"
+  ]
+}

@@ -1,0 +1,26 @@
+.wp-block-snd-video-gallery.sd-exterier {
+  .swiper-wrapper {
+    overflow-y: auto;
+    height: 674px;
+
+    @media (max-width: 767px) {
+      height: clamp(40.938rem, 37.904rem + 12.94vw, 53.438rem);
+    }
+
+    @media (max-width: 767px) {
+      height: 800px;
+    }
+  }
+
+  .wp-block-video {
+    & > div {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  .block-list-appender {
+    position: sticky;
+  }
+}

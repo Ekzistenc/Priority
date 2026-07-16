@@ -1,0 +1,55 @@
+.sd-about {
+	padding: clamp(3.438rem, 2.603rem + 3.56vw, 6.875rem) 0;
+	overflow: hidden;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		> * {
+			margin: 0;
+		}
+
+		h2 {
+			font-family: Unbounded, sans-serif;
+			font-size: clamp(1.25rem, 0.704rem + 2.33vw, 3.5rem);
+			font-weight: 500;
+			text-transform: uppercase;
+			max-width: 1193px;
+			margin-bottom: clamp(1.25rem, 0.492rem + 3.24vw, 4.375rem);
+
+			mark {
+				font-family: Unbounded, sans-serif;
+				font-size: clamp(1.25rem, 0.704rem + 2.33vw, 3.5rem);
+				font-weight: 500;
+				text-transform: uppercase;
+			}
+		}
+
+		p {
+			font-size: clamp(1rem, 0.636rem + 1.55vw, 2.5rem);
+			margin-bottom: clamp(1.25rem, 0.947rem + 1.29vw, 2.5rem);
+		}
+
+		h3 {
+			max-width: clamp(43.563rem, 12.521rem + 41.39vw, 62.188rem);
+			align-self: flex-end;
+			font-family: Unbounded, sans-serif;
+			font-size: clamp(1rem, 0.636rem + 1.55vw, 2.5rem);
+			font-weight: 400;
+			text-transform: uppercase;
+
+			mark {
+				font-family: Unbounded, sans-serif;
+				font-size: clamp(1rem, 0.636rem + 1.55vw, 2.5rem);
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+
+			@media (max-width: 1199px) {
+				max-width: 100%;
+			}
+		}
+	}
+}

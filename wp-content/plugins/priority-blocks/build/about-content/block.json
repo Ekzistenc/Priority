@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/about-content",
+  "version": "0.1.1",
+  "title": "О компании контент",
+  "category": "snd-blocks",
+  "icon": "media-code",
+  "parent": [
+    "snd/about-wrapper"
+  ],
+  "example": {
+    "viewportWidth": 1200
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "title": {
+      "type": "string",
+      "default": "ГК «Вместе» работает в сфере девелопмента с 2012 года"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": [
+    "file:./style-index.css"
+  ],
+  "render": "file:./render.php"
+}

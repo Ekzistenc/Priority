@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/you",
+  "version": "0.1.0",
+  "title": "You",
+  "category": "snd-blocks",
+  "icon": "admin-users",
+  "example": {},
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Вы разбираетесь в жизни."
+    },
+    "youList": {
+      "type": "array",
+      "default": [
+        "Умеете отличить мимолётное от фундаментального.",
+        "Знаете цену качеству и надёжности.",
+        "Видите цель и видите путь к ней."
+      ]
+    },
+    "image_url": {
+      "type": "string",
+      "default": ""
+    },
+    "image_alt": {
+      "type": "string",
+      "default": ""
+    },
+    "image_id": {
+      "type": "number",
+      "default": 0
+    },
+    "video": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "url": "",
+        "poster": {
+          "id": 0,
+          "url": ""
+        }
+      }
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "glightbox",
+    "file:./view.js"
+  ],
+  "viewStyle": [
+    "glightbox"
+  ]
+}

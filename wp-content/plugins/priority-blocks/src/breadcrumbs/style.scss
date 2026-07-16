@@ -1,0 +1,29 @@
+.sd-bread-crumbs {
+	padding-top: clamp(1.25rem, 0.795rem + 1.94vw, 3.125rem);
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 5px;
+	}
+
+	a {
+		opacity: 0.6;
+		font-size: clamp(0.75rem, 0.477rem + 1.17vw, 1.875rem);
+	}
+
+	span {
+		font-size: clamp(0.75rem, 0.477rem + 1.17vw, 1.875rem);
+	}
+
+	p {
+		font-size: clamp(0.75rem, 0.477rem + 1.17vw, 1.875rem);
+	}
+}

@@ -1,0 +1,117 @@
+.sd-club-home {
+	padding: clamp(1.875rem, 0.661rem + 5.18vw, 6.875rem) 0 clamp(3.75rem, 2.992rem + 3.24vw, 6.875rem);
+	overflow: hidden;
+
+	* {
+		margin: 0;
+	}
+
+	h2 {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: clamp(1.875rem, 0.661rem + 5.18vw, 6.875rem);
+
+		span {
+			font-family: Unbounded, sans-serif;
+			font-size: clamp(1.25rem, 0.704rem + 2.33vw, 3.5rem);
+			font-weight: 500;
+			text-transform: uppercase;
+
+			&:nth-child(3) {
+				max-width: clamp(43.563rem, 12.521rem + 41.39vw, 62.188rem);
+				align-self: flex-end;
+				width: 100%;
+
+				@media (max-width: 1199px) {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
+	img {
+		width: 100%;
+		object-fit: cover;
+		height: clamp(17.75rem, 5.493rem + 52.3vw, 68.25rem);
+		border-radius: 30px;
+
+		@media (max-width: 540px) {
+			border-radius: 0;
+		}
+	}
+
+		video {
+			width: 100%;
+			object-fit: cover;
+			height: clamp(17.75rem, 5.493rem + 52.3vw, 68.25rem);
+			border-radius: 30px;
+	
+			@media (max-width: 540px) {
+				border-radius: 0;
+			}
+		}
+
+	.sd-club-home__text {
+		padding-top: clamp(1.875rem, 1.268rem + 2.59vw, 4.375rem);
+		border-radius: 20px;
+		background: rgb(238, 222, 205);
+		margin-top: -100px;
+		z-index: 1;
+		position: relative;
+		margin-top: 0;
+		
+			.sd-modal-link {
+				width: 100%;
+				color: rgb(238, 222, 205);
+				font-family: Unbounded;
+				font-size: clamp(0.875rem, 0.784rem + 0.39vw, 1.25rem);
+				border-radius: clamp(0.625rem, 0.549rem + 0.32vw, 0.938rem);
+				padding: clamp(0.75rem, 0.629rem + 0.52vw, 1.25rem);
+				background: rgb(50, 46, 73);
+				box-sizing: border-box;
+				text-align: center;
+				margin-top: clamp(1.875rem, 0.661rem + 5.18vw, 6.875rem);
+			}
+	
+		@media (max-width: 540px) {
+			margin-top: -20px;
+		}
+	
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	
+		h3 {
+			font-family: "Onest", sans-serif;
+			text-transform: none;
+			font-size: clamp(1rem, 0.636rem + 1.55vw, 2.5rem);
+			font-weight: 400;
+			margin-bottom: clamp(1.25rem, 0.947rem + 1.29vw, 2.5rem);
+		}
+	
+		p {
+			max-width: clamp(43.563rem, 12.521rem + 41.39vw, 62.188rem);
+			align-self: flex-end;
+			width: 100%;
+			font-family: Unbounded, sans-serif;
+			font-size: clamp(1rem, 0.636rem + 1.55vw, 2.5rem);
+			font-weight: 400;
+			text-transform: uppercase;
+	
+			mark {
+				display: block;
+				font-family: Unbounded, sans-serif;
+				font-size: clamp(1rem, 0.636rem + 1.55vw, 2.5rem);
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+	
+			@media (max-width: 1199px) {
+				max-width: 100%;
+			}
+		}
+	}
+}

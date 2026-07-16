@@ -1,0 +1,11 @@
+.preloader {
+  display: none;
+  position: relative;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &.open {
+    display: flex;
+  }
+}

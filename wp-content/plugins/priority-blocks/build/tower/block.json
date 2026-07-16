@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/tower",
+  "version": "0.1.0",
+  "title": "Башня «Первый Priority»",
+  "category": "snd-blocks",
+  "icon": "text-page",
+  "example": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Башня «Первый Priority»"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "станет доминантой локации, расположенной особняком от оживлённой трассы и поблизости к огромному лесному массиву."
+    },
+    "list": {
+      "type": "array",
+      "default": [
+        "Сдержанные благородные цветовые решения фасада скрывают от посторонних глаз тихую роскошь внутреннего убранства.",
+        "А рядом поистине есть всё, что вам только может понадобиться для жизни в этом Доме и в этом городе."
+      ]
+    },
+    "button": {
+      "type": "object",
+      "default": {
+        "text": "Узнать все подробности",
+        "link": "",
+        "target": true,
+        "modal": true,
+        "show": true
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
