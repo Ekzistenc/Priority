@@ -1,0 +1,1 @@
+{"version":3,"file":"last-news/index.css","mappings":";;;AACC;EACC;AAAF;AAGC;EACC;AADF,C","sources":["webpack://priority-blocks/./src/last-news/editor.scss"],"sourcesContent":[".wp-block-snd-last-news {\r\n\ta {\r\n\t\tpointer-events: none;\r\n\t}\r\n\r\n\t.sd-news__loader {\r\n\t\tmargin: 30px auto;\r\n\t}\r\n}\r\n"],"names":[],"sourceRoot":""}

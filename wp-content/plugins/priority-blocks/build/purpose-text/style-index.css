@@ -1,1 +1,40 @@
-.sd-purpose-text{overflow:hidden;padding:clamp(1.875rem,1.496rem + 1.62vw,3.438rem) 0 0}.sd-purpose-text *{margin:0}.sd-purpose-text h2{align-items:flex-start;color:#222435;display:flex;flex-direction:column}.sd-purpose-text h2 span{font-family:Unbounded,sans-serif;font-size:clamp(1.188rem,.626rem + 2.39vw,3.5rem);font-weight:500;text-transform:uppercase}.sd-purpose-text h2 span:nth-child(2),.sd-purpose-text h2 span:nth-child(3){align-self:flex-end}@media(max-width:575px){.sd-purpose-text h2 span:nth-child(2),.sd-purpose-text h2 span:nth-child(3){align-self:flex-start}}.sd-purpose-text h3{font-family:Onest,sans-serif;font-size:clamp(1rem,.636rem + 1.55vw,2.5rem);font-weight:400;margin-top:clamp(1.25rem,.492rem + 3.24vw,4.375rem);max-width:clamp(16.688rem,10.817rem + 25.05vw,40.875rem);text-transform:none}
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/purpose-text/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+.sd-purpose-text {
+  padding: clamp(1.875rem, 1.496rem + 1.62vw, 3.438rem) 0 0;
+  overflow: hidden;
+}
+.sd-purpose-text * {
+  margin: 0;
+}
+.sd-purpose-text h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: rgb(34, 36, 53);
+}
+.sd-purpose-text h2 span {
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(1.188rem, 0.626rem + 2.39vw, 3.5rem);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.sd-purpose-text h2 span:nth-child(2), .sd-purpose-text h2 span:nth-child(3) {
+  align-self: flex-end;
+}
+@media (max-width: 575px) {
+  .sd-purpose-text h2 span:nth-child(2), .sd-purpose-text h2 span:nth-child(3) {
+    align-self: flex-start;
+  }
+}
+.sd-purpose-text h3 {
+  margin-top: clamp(1.25rem, 0.492rem + 3.24vw, 4.375rem);
+  max-width: clamp(16.688rem, 10.817rem + 25.05vw, 40.875rem);
+  font-size: clamp(1rem, 0.636rem + 1.55vw, 2.5rem);
+  font-weight: 400;
+  font-family: "Onest", sans-serif;
+  text-transform: none;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

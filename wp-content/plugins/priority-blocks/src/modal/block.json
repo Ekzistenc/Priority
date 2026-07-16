@@ -34,6 +34,6 @@
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"viewScript": ["dialog-polyfill","file:./view.js"],
-	"viewStyle": ["dialog-polyfill"]
+	"viewScript": [ "dialog-polyfill", "file:./view.js" ],
+	"viewStyle": [ "dialog-polyfill" ]
 }

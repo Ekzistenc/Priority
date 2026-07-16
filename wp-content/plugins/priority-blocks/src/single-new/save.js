@@ -1,12 +1,8 @@
-import {
-	useBlockProps,
-	InnerBlocks
-} from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
-export default function save({ }) {
-
+export default function save( {} ) {
 	return (
-		<section {...useBlockProps.save({ className: 'sd-new' })}>
+		<section { ...useBlockProps.save( { className: 'sd-new' } ) }>
 			<div className="container">
 				<InnerBlocks.Content />
 			</div>

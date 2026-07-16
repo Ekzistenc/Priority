@@ -1,5 +1,9 @@
 .wp-block-snd-last-news {
-  a {
-    pointer-events: none;
-  }
+	a {
+		pointer-events: none;
+	}
+
+	.sd-news__loader {
+		margin: 30px auto;
+	}
 }

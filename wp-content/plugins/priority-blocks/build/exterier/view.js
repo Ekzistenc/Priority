@@ -1,1 +1,60 @@
-document.addEventListener("DOMContentLoaded",()=>{!function(){function e(e,r,t){const i=e.querySelector(`.${t}`);i&&i.classList.add(`${t}-${r}`)}document.querySelectorAll(".sd-exterier").forEach((r,t)=>{e(r,t,"swiper-exterier"),e(r,t,"swiper-exterier-next"),e(r,t,"swiper-exterier-prev"),e(r,t,"swiper-pagination-exterier"),e(r,t,"swiper-counter-exterier"),new Swiper(`.swiper-exterier-${t}`,{spaceBetween:10,direction:"horizontal",navigation:{nextEl:`.swiper-exterier-next-${t}`,prevEl:`.swiper-exterier-prev-${t}`},pagination:{el:`.swiper-pagination-exterier-${t}`,clickable:!0},breakpoints:{1200:{pagination:{el:`.swiper-counter-exterier-${t}`,type:"fraction",clickable:!0,renderFraction:function(e,r){return'<span class="'+e+'"></span>'}}}}})})}(),document.querySelectorAll(".sd-exterier").forEach((e,r)=>{var t;t=`.swiper-exterier-${r} .glightbox3`,document.querySelector(t)&&GLightbox({selector:t}).on("open",()=>{})})});
+/******/ (() => { // webpackBootstrap
+/*!******************************!*\
+  !*** ./src/exterier/view.js ***!
+  \******************************/
+document.addEventListener('DOMContentLoaded', () => {
+  (function () {
+    document.querySelectorAll('.sd-exterier').forEach((swiperItem, index) => {
+      addIndexClass(swiperItem, index, 'swiper-exterier');
+      addIndexClass(swiperItem, index, 'swiper-exterier-next');
+      addIndexClass(swiperItem, index, 'swiper-exterier-prev');
+      addIndexClass(swiperItem, index, 'swiper-pagination-exterier');
+      addIndexClass(swiperItem, index, 'swiper-counter-exterier');
+      const swiperExterier = new Swiper(`.swiper-exterier-${index}`, {
+        spaceBetween: 10,
+        direction: 'horizontal',
+        navigation: {
+          nextEl: `.swiper-exterier-next-${index}`,
+          prevEl: `.swiper-exterier-prev-${index}`
+        },
+        pagination: {
+          el: `.swiper-pagination-exterier-${index}`,
+          clickable: true
+        },
+        breakpoints: {
+          1200: {
+            pagination: {
+              el: `.swiper-counter-exterier-${index}`,
+              type: 'fraction',
+              clickable: true,
+              renderFraction: function (currentClass, totalClass) {
+                return '<span class="' + currentClass + '"></span>';
+              }
+            }
+          }
+        }
+      });
+    });
+    function addIndexClass(parent, index, selector) {
+      const element = parent.querySelector(`.${selector}`);
+      if (!element) return;
+      element.classList.add(`${selector}-${index}`);
+    }
+  })();
+  (function () {
+    const initLightbox = selector => {
+      const element = document.querySelector(selector);
+      if (!element) return;
+      const lightbox = GLightbox({
+        selector
+      });
+      lightbox.on('open', () => {});
+    };
+    document.querySelectorAll('.sd-exterier').forEach((swiperItem, index) => {
+      initLightbox(`.swiper-exterier-${index} .glightbox3`);
+    });
+  })();
+});
+/******/ })()
+;
+//# sourceMappingURL=view.js.map

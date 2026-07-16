@@ -55,12 +55,6 @@
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"render": "file:./render.php",
-	"viewScript": [
-		"ymap",
-		"glightbox",
-		"file:./view.js"
-	],
-	"viewStyle": [
-		"glightbox"
-	]
+	"viewScript": [ "ymap", "glightbox", "file:./view.js" ],
+	"viewStyle": [ "glightbox" ]
 }

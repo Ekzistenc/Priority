@@ -64,6 +64,8 @@ $all_count_flats = (int)wp_count_posts('flats')->publish;
 								<a href="<?php echo esc_url($thumbnail_full_url); ?>" class="glightbox2">
 									<?php echo $thumbnail_image; ?>
 								</a>
+							<?php else : ?>
+								<div class="sd-layouts__image-placeholder"></div>
 							<?php endif; ?>
 
 							<?php if ($meta_snd_count_room && $meta_snd_flat_size) : ?>
@@ -85,7 +87,12 @@ $all_count_flats = (int)wp_count_posts('flats')->publish;
 				</div>
 
 				<?php if ($all_count_flats > $table_count_el) : ?>
-					<button class="sd-layouts__more-button" data-count="<?php echo $table_count_el; ?>" data-offset="<?php echo $table_count_el; ?>">
+					<button 
+						class="sd-layouts__more-button" 
+						data-count="<?php echo $table_count_el; ?>" 
+						data-offset="<?php echo $table_count_el; ?>"
+						data-card-text-button="<?php echo $text_button; ?>"
+					>
 						<?php echo $table_button_text; ?>
 					</button>
 				<?php endif; ?>

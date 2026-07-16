@@ -48,7 +48,7 @@ function snd_loading_flat_content()
 		foreach ($gallery as $image_id) {
 			$preview_image_url = wp_get_attachment_image_url($image_id, '1536x1536');
 			$big_image_url = wp_get_attachment_image_url($image_id, '2048x2048');
-			$small_image_url = wp_get_attachment_image_url($image_id, 'thumbnail');
+			$small_image_url = wp_get_attachment_image_url($image_id, [250, 250]);
 
 			$big_slides_html .= <<<BIG_SLIDE
 			<div class="swiper-slide">
@@ -99,7 +99,7 @@ function snd_loading_flat_content()
 		<h2>$title</h2>
 		<h3>$description</h3>
 		$price_html
-		<a class="sd-modal-link">
+		<a class="sd-modal-link" data-title="$title">
 			$text_button
 		</a>
 	</div>

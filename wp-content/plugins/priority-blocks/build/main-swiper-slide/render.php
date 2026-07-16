@@ -3,14 +3,17 @@ $id = !empty($attributes['anchor']) ? esc_attr($attributes['anchor']) : '';
 $title_01 = !empty($attributes['title_01']) ? wp_kses_post($attributes['title_01']) : '';
 $title_02 = !empty($attributes['title_02']) ? wp_kses_post($attributes['title_02']) : '';
 $subtitle = !empty($attributes['subtitle']) ? wp_kses_post($attributes['subtitle']) : '';
-$image = !empty($attributes['image']) ? (array)$attributes['image'] : [];
 $imageLogo = !empty($attributes['imageLogo']) ? (array)$attributes['imageLogo'] : [];
 $button = !empty($attributes['button']) ? (array)$attributes['button'] : [];
 
+// Image
+$image = !empty($attributes['image']) ? (array)$attributes['image'] : [];
+$image_size = !empty($image['size']) ? $image['size'] : 'full';
+$image_url = !empty($image['id']) ? wp_get_attachment_image_url($image['id'], $image_size) : '';
 ?>
 
 <div <?php echo get_block_wrapper_attributes(['id' => $id, 'class' => 'swiper-slide']); ?>>
-	<div class="sd-main" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(<?php echo !empty($image['url']) ? esc_url($image['url']) : ''; ?>);">
+	<div class="sd-main" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(<?php echo !empty($image_url) ? esc_url($image_url) : ''; ?>);">
 		<div class="container">
 			<?php if (!empty($imageLogo['url'])) : ?>
 				<img

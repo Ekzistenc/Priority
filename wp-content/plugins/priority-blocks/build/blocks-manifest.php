@@ -670,6 +670,10 @@ return array(
 			),
 			'anchor' => array(
 				'type' => 'string'
+			),
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
 			)
 		),
 		'supports' => array(
@@ -715,7 +719,7 @@ return array(
 			),
 			'title_02' => array(
 				'type' => 'string',
-				'default' => 'бизнес-класса в&nbsp;братске',
+				'default' => 'бизнес-класса<br>в&nbsp;Братске',
 				'selector' => 'span'
 			),
 			'subtitle' => array(
@@ -726,7 +730,7 @@ return array(
 				'type' => 'object',
 				'default' => array(
 					'name' => 'Выбрать квартиру',
-					'href' => '/',
+					'href' => '/#layouts',
 					'target' => false
 				)
 			),
@@ -736,7 +740,7 @@ return array(
 					'id' => 0,
 					'url' => '',
 					'alt' => '',
-					'size' => 'full'
+					'size' => 'medium'
 				)
 			),
 			'image' => array(
@@ -745,7 +749,7 @@ return array(
 					'id' => 0,
 					'url' => '',
 					'alt' => '',
-					'size' => 'large',
+					'size' => '2048x2048',
 					'sizes' => array(
 						
 					)
@@ -1215,6 +1219,7 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php',
 		'viewScript' => array(
 			'glightbox',
 			'file:./view.js'

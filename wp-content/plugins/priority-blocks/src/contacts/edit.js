@@ -10,14 +10,14 @@ import {
 	TextControl,
 	ToggleControl,
 	Notice,
-	Button
+	Button,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import iconBaloon from './baloon.png';
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit( { attributes, setAttributes } ) {
 	const {
 		title,
 		title_phone,
@@ -28,48 +28,50 @@ export default function Edit({ attributes, setAttributes }) {
 		title_socs,
 		socs,
 		button,
-		map
+		map,
 	} = attributes;
 
 	// Формирование URL для карты
-	const [lat, long] = map.coordinates_xy.split(',').map(coord => coord.trim());
-	const mapUrl = `https://yandex.ru/map-widget/v1/?ll=${long}%2C${lat}&mode=whatshere&whatshere[point]=${long}%2C${lat}&whatshere[zoom]=${map.zoom}&z=${map.zoom}`;
+	const [ lat, long ] = map.coordinates_xy
+		.split( ',' )
+		.map( ( coord ) => coord.trim() );
+	const mapUrl = `https://yandex.ru/map-widget/v1/?ll=${ long }%2C${ lat }&mode=whatshere&whatshere[point]=${ long }%2C${ lat }&whatshere[zoom]=${ map.zoom }&z=${ map.zoom }`;
 
-	const ALLOWED_MEDIA_TYPES = ['image'];
+	const ALLOWED_MEDIA_TYPES = [ 'image' ];
 
-	const [linkError, setLinkError] = useState(false);
+	const [ linkError, setLinkError ] = useState( false );
 
-	const isValidUrl = (url) => {
+	const isValidUrl = ( url ) => {
 		try {
-			new URL(url);
+			new URL( url );
 			return true;
-		} catch (_) {
+		} catch ( _ ) {
 			return false;
 		}
 	};
 
-	const onChangeButtonProp = (field, value) => {
-		setAttributes({
+	const onChangeButtonProp = ( field, value ) => {
+		setAttributes( {
 			button: {
 				...button,
-				[field]: value,
+				[ field ]: value,
 			},
-		});
+		} );
 	};
 
-	const onChangeMapProp = (field, value) => {
-		setAttributes({
+	const onChangeMapProp = ( field, value ) => {
+		setAttributes( {
 			map: {
 				...map,
-				[field]: value,
+				[ field ]: value,
 			},
-		});
+		} );
 	};
 
-	const onChangeSocsItem = (index, value, field) => {
-		const updatedSocs = [...socs];
-		updatedSocs[index][field] = value;
-		setAttributes({ socs: updatedSocs });
+	const onChangeSocsItem = ( index, value, field ) => {
+		const updatedSocs = [ ...socs ];
+		updatedSocs[ index ][ field ] = value;
+		setAttributes( { socs: updatedSocs } );
 	};
 
 	const onClickAddSocsItem = () => {
@@ -81,87 +83,85 @@ export default function Edit({ attributes, setAttributes }) {
 				url: '',
 			},
 		};
-		const updatedSocs = [...socs, newItem];
-		setAttributes({ socs: updatedSocs });
+		const updatedSocs = [ ...socs, newItem ];
+		setAttributes( { socs: updatedSocs } );
 	};
 
-	const onDragEnd = (result) => {
-		if (!result.destination) return;
+	const onDragEnd = ( result ) => {
+		if ( ! result.destination ) return;
 
-		const newSocs = Array.from(socs);
-		const [movedItem] = newSocs.splice(result.source.index, 1);
-		newSocs.splice(result.destination.index, 0, movedItem);
+		const newSocs = Array.from( socs );
+		const [ movedItem ] = newSocs.splice( result.source.index, 1 );
+		newSocs.splice( result.destination.index, 0, movedItem );
 
-		setAttributes({ socs: newSocs });
+		setAttributes( { socs: newSocs } );
 	};
 
-	const onChangeText = (field, value) => {
-		setAttributes({ [field]: value });
+	const onChangeText = ( field, value ) => {
+		setAttributes( { [ field ]: value } );
 	};
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title="Настройки блока" initialOpen={false}>
+				<PanelBody title="Настройки блока" initialOpen={ false }>
 					<TextControl
 						label="Заголовок"
-						value={title}
-						__nextHasNoMarginBottom={true}
-						onChange={(value) =>
-							onChangeText('title', value)
-						}
+						value={ title }
+						__nextHasNoMarginBottom={ true }
+						onChange={ ( value ) => onChangeText( 'title', value ) }
 					/>
 					<hr />
 
 					<TextControl
 						label="Заголовок телефон"
-						value={title_phone}
-						__nextHasNoMarginBottom={true}
-						onChange={(value) =>
-							onChangeText('title_phone', value)
+						value={ title_phone }
+						__nextHasNoMarginBottom={ true }
+						onChange={ ( value ) =>
+							onChangeText( 'title_phone', value )
 						}
 					/>
 					<TextControl
 						label="Телефон"
 						type="tel"
-						value={number_phone}
-						__nextHasNoMarginBottom={true}
-						onChange={(value) => {
-							onChangeText('number_phone', value);
+						value={ number_phone }
+						__nextHasNoMarginBottom={ true }
+						onChange={ ( value ) => {
+							onChangeText( 'number_phone', value );
 							onChangeText(
 								'number_phone_href',
-								value.replace(/[^0-9]/g, '')
+								value.replace( /[^0-9]/g, '' )
 							);
-						}}
+						} }
 					/>
 
 					<TextControl
 						label="Телефон для ссылки"
-						value={number_phone_href}
-						__nextHasNoMarginBottom={true}
-						onChange={(value) => {
+						value={ number_phone_href }
+						__nextHasNoMarginBottom={ true }
+						onChange={ ( value ) => {
 							onChangeText(
 								'number_phone_href',
-								value.replace(/[^0-9]/g, '')
+								value.replace( /[^0-9]/g, '' )
 							);
-						}}
+						} }
 					/>
 
 					<hr />
 					<TextControl
 						label="Заголовок адрес"
-						value={title_address}
-						__nextHasNoMarginBottom={true}
-						onChange={(value) =>
-							onChangeText('title_address', value)
+						value={ title_address }
+						__nextHasNoMarginBottom={ true }
+						onChange={ ( value ) =>
+							onChangeText( 'title_address', value )
 						}
 					/>
 					<TextControl
 						label="Адрес"
-						value={desc_address}
-						__nextHasNoMarginBottom={true}
-						onChange={(value) =>
-							onChangeText('desc_address', value)
+						value={ desc_address }
+						__nextHasNoMarginBottom={ true }
+						onChange={ ( value ) =>
+							onChangeText( 'desc_address', value )
 						}
 					/>
 
@@ -169,58 +169,79 @@ export default function Edit({ attributes, setAttributes }) {
 
 					<TextControl
 						label="Соцсети Заголовок"
-						value={title_socs}
-						__nextHasNoMarginBottom={true}
-						onChange={(value) => {
-							onChangeText('title_socs', value);
-						}}
+						value={ title_socs }
+						__nextHasNoMarginBottom={ true }
+						onChange={ ( value ) => {
+							onChangeText( 'title_socs', value );
+						} }
 					/>
 
-					<DragDropContext onDragEnd={onDragEnd}>
+					<DragDropContext onDragEnd={ onDragEnd }>
 						<Droppable droppableId="socs-list-droppable">
-							{(provided) => (
+							{ ( provided ) => (
 								<div
-									{...provided.droppableProps}
-									ref={provided.innerRef}
+									{ ...provided.droppableProps }
+									ref={ provided.innerRef }
 									className="components-list-control components-list-control--mix"
 								>
 									<label className="components-list-control__label">
 										Соцсети список
 									</label>
 
-									{socs?.map((item, index) => (
+									{ socs?.map( ( item, index ) => (
 										<Draggable
-											key={index}
-											draggableId={`soc-${index}`}
-											index={index}
+											key={ index }
+											draggableId={ `soc-${ index }` }
+											index={ index }
 										>
-											{(provided) => (
+											{ ( provided ) => (
 												<details
 													className="components-list-control__item"
-													ref={provided.innerRef}
-													{...provided.draggableProps}
-													{...provided.dragHandleProps}
+													ref={ provided.innerRef }
+													{ ...provided.draggableProps }
+													{ ...provided.dragHandleProps }
 												>
 													<summary>
 														<div className="dragabble-element"></div>
-														<span>{item?.name ? item?.name : `Ссылка ${index + 1}`}</span>
+														<span>
+															{ item?.name
+																? item?.name
+																: `Ссылка ${
+																		index +
+																		1
+																  }` }
+														</span>
 
 														<Button
 															className="is-secondary is-destructive is-small"
 															title="Удалить ссылку"
-															onClick={() => {
-																const updatedSocs = [...socs];
-																updatedSocs.splice(index, 1);
-																setAttributes({ socs: updatedSocs, });
-															}}
+															onClick={ () => {
+																const updatedSocs =
+																	[ ...socs ];
+																updatedSocs.splice(
+																	index,
+																	1
+																);
+																setAttributes( {
+																	socs: updatedSocs,
+																} );
+															} }
 														></Button>
 													</summary>
 
 													<TextControl
 														label="Имя"
-														value={item.name}
-														onChange={(value) => onChangeSocsItem(index, value, 'name')}
-														__nextHasNoMarginBottom={true}
+														value={ item.name }
+														onChange={ ( value ) =>
+															onChangeSocsItem(
+																index,
+																value,
+																'name'
+															)
+														}
+														__nextHasNoMarginBottom={
+															true
+														}
 													/>
 
 													<hr />
@@ -228,88 +249,155 @@ export default function Edit({ attributes, setAttributes }) {
 													<TextControl
 														label="Ссылка"
 														type="url"
-														value={item.link}
-														onChange={(value) => onChangeSocsItem(index, value, 'link')}
-														__nextHasNoMarginBottom={true}
+														value={ item.link }
+														onChange={ ( value ) =>
+															onChangeSocsItem(
+																index,
+																value,
+																'link'
+															)
+														}
+														__nextHasNoMarginBottom={
+															true
+														}
 													/>
 
 													<hr />
 
 													<MediaUploadCheck>
 														<MediaUpload
-															onSelect={(media) => {
-																const id = media?.id || 0;
-																const thumb_url = media?.sizes?.thumbnail?.url || media?.url || '';
+															onSelect={ (
+																media
+															) => {
+																const id =
+																	media?.id ||
+																	0;
+																const thumb_url =
+																	media?.sizes
+																		?.thumbnail
+																		?.url ||
+																	media?.url ||
+																	'';
 
 																const image = {
 																	id: id,
 																	url: thumb_url,
 																};
 
-																onChangeSocsItem(index, image, 'icon');
-															}}
-															allowedTypes={ALLOWED_MEDIA_TYPES}
-															value={socs[index].icon.id}
-															render={({ open }) => (
+																onChangeSocsItem(
+																	index,
+																	image,
+																	'icon'
+																);
+															} }
+															allowedTypes={
+																ALLOWED_MEDIA_TYPES
+															}
+															value={
+																socs[ index ]
+																	.icon.id
+															}
+															render={ ( {
+																open,
+															} ) => (
 																<div className="components-base-control">
 																	<label className="components-base-control__label-media-button">
-																		Выбрать иконку
+																		Выбрать
+																		иконку
 																	</label>
-																	{socs[index]?.icon?.url && (
+																	{ socs[
+																		index
+																	]?.icon
+																		?.url && (
 																		<>
 																			<div className="components-base-control__media-preview">
 																				<img
-																					src={socs[index].icon.url}
+																					src={
+																						socs[
+																							index
+																						]
+																							.icon
+																							.url
+																					}
 																					alt=""
 																				/>
 																			</div>
 																		</>
-																	)}
+																	) }
 
 																	<div className="components-base-control__media-buttons">
 																		<Button
-																			variant={socs[index]?.icon?.id ? 'secondary' : 'primary'}
-																			onClick={open}
+																			variant={
+																				socs[
+																					index
+																				]
+																					?.icon
+																					?.id
+																					? 'secondary'
+																					: 'primary'
+																			}
+																			onClick={
+																				open
+																			}
 																		>
-																			{socs[index]?.icon?.id ? 'Изменить' : 'Выбрать'}{' '}
+																			{ socs[
+																				index
+																			]
+																				?.icon
+																				?.id
+																				? 'Изменить'
+																				: 'Выбрать' }{ ' ' }
 																			иконку
 																		</Button>
 
-																		{socs[index]?.icon?.url && (
+																		{ socs[
+																			index
+																		]?.icon
+																			?.url && (
 																			<Button
 																				className="is-secondary is-destructive"
-																				onClick={() => {
-																					const image = {
-																						...socs[index].icon,
-																						id: 0,
-																						url: '',
-																					};
+																				onClick={ () => {
+																					const image =
+																						{
+																							...socs[
+																								index
+																							]
+																								.icon,
+																							id: 0,
+																							url: '',
+																						};
 
-																					onChangeSocsItem(index, image, 'icon');
-																				}}
-																			>x</Button>
-																		)}
+																					onChangeSocsItem(
+																						index,
+																						image,
+																						'icon'
+																					);
+																				} }
+																			>
+																				x
+																			</Button>
+																		) }
 																	</div>
 																</div>
-															)}
+															) }
 														/>
 													</MediaUploadCheck>
 												</details>
-											)}
+											) }
 										</Draggable>
-									))}
+									) ) }
 
-									{provided.placeholder}
+									{ provided.placeholder }
 
 									<hr />
 									<Button
 										variant="primary"
-										onClick={onClickAddSocsItem}
+										onClick={ onClickAddSocsItem }
 									>
 										Добавить
 									</Button>
 								</div>
-							)}
+							) }
 						</Droppable>
 					</DragDropContext>
 					<hr />
@@ -320,106 +408,111 @@ export default function Edit({ attributes, setAttributes }) {
 						</label>
 
 						<ToggleControl
-							__nextHasNoMarginBottom={true}
-							checked={button.show}
+							__nextHasNoMarginBottom={ true }
+							checked={ button.show }
 							label="Показывать кнопку"
-							onChange={() =>
-								onChangeButtonProp('show', !button.show)
+							onChange={ () =>
+								onChangeButtonProp( 'show', ! button.show )
 							}
 						/>
 
 						<ToggleControl
-							__nextHasNoMarginBottom={true}
-							checked={button.modal}
+							__nextHasNoMarginBottom={ true }
+							checked={ button.modal }
 							label="Модальное окно"
-							onChange={() =>
-								onChangeButtonProp('modal', !button.modal)
+							onChange={ () =>
+								onChangeButtonProp( 'modal', ! button.modal )
 							}
 						/>
 
 						<TextControl
-							value={button.text}
+							value={ button.text }
 							label="Текст кнопки"
-							__nextHasNoMarginBottom={true}
-							onChange={(value) =>
-								onChangeButtonProp('text', value)
+							__nextHasNoMarginBottom={ true }
+							onChange={ ( value ) =>
+								onChangeButtonProp( 'text', value )
 							}
 						/>
 
-						{!button.modal && (
+						{ ! button.modal && (
 							<>
 								<TextControl
-									value={button.link}
+									value={ button.link }
 									label="URL кнопки"
-									__nextHasNoMarginBottom={true}
-									onChange={(value) => {
-										onChangeButtonProp('link', value);
+									__nextHasNoMarginBottom={ true }
+									onChange={ ( value ) => {
+										onChangeButtonProp( 'link', value );
 										setLinkError(
-											value && !isValidUrl(value)
+											value && ! isValidUrl( value )
 										);
-									}}
+									} }
 								/>
 
-								{linkError && (
+								{ linkError && (
 									<Notice
 										status="error"
-										isDismissible={false}
+										isDismissible={ false }
 									>
 										Введите корректный URL, например:
 										https://example.com
 									</Notice>
-								)}
+								) }
 
 								<ToggleControl
-									__nextHasNoMarginBottom={true}
-									checked={button.target}
+									__nextHasNoMarginBottom={ true }
+									checked={ button.target }
 									label="Открывать в новой вкладке"
-									onChange={() =>
+									onChange={ () =>
 										onChangeButtonProp(
 											'target',
-											!button.target
+											! button.target
 										)
 									}
 								/>
 							</>
-						)}
+						) }
 					</div>
 				</PanelBody>
 
-				<PanelBody title="Настройки карты" initialOpen={false}>
+				<PanelBody title="Настройки карты" initialOpen={ false }>
 					<TextControl
 						label="Координаты (широта, долгота)"
-						value={map.coordinates_xy}
-						onChange={(value) => onChangeMapProp("coordinates_xy", value)} // Убрать "="
+						value={ map.coordinates_xy }
+						onChange={ ( value ) =>
+							onChangeMapProp( 'coordinates_xy', value )
+						} // Убрать "="
 						help="Формат: 00.000000, 00.000000"
 					/>
 
 					<TextControl
 						label="Уровень масштабирования"
-						value={map.zoom}
+						value={ map.zoom }
 						type="number"
 						min="1"
-						onChange={(value) => onChangeMapProp("zoom", value)}
+						onChange={ ( value ) =>
+							onChangeMapProp( 'zoom', value )
+						}
 					/>
 
 					<TextControl
 						label="Адрес"
-						value={map.address}
-						onChange={(value) => onChangeMapProp("address", value)}
+						value={ map.address }
+						onChange={ ( value ) =>
+							onChangeMapProp( 'address', value )
+						}
 					/>
 				</PanelBody>
 			</InspectorControls>
 
-			<section {...useBlockProps({ className: 'sd-contacts' })}>
+			<section { ...useBlockProps( { className: 'sd-contacts' } ) }>
 				<div className="container">
 					<div className="sd-contacts__text">
-
 						<RichText
 							tagName="h2"
-							value={title}
+							value={ title }
 							placeholder="Введите заголовок"
-							onChange={(value) =>
-								onChangeText('title', value)
+							onChange={ ( value ) =>
+								onChangeText( 'title', value )
 							}
 						/>
 
@@ -427,20 +520,20 @@ export default function Edit({ attributes, setAttributes }) {
 							tagName="p"
 							className="sd-contacts__discription"
 							placeholder="Введите заголовок телефона"
-							value={title_phone}
-							onChange={(value) =>
-								onChangeText('title_phone', value)
+							value={ title_phone }
+							onChange={ ( value ) =>
+								onChangeText( 'title_phone', value )
 							}
 						/>
 
 						<RichText
 							tagName="a"
 							className="sd-contacts__tel"
-							href={`tel:+${number_phone_href}`}
+							href={ `tel:+${ number_phone_href }` }
 							placeholder="Введите отображаемый телефон"
-							value={number_phone}
-							onChange={(value) =>
-								onChangeText('number_phone', value)
+							value={ number_phone }
+							onChange={ ( value ) =>
+								onChangeText( 'number_phone', value )
 							}
 						/>
 
@@ -448,9 +541,9 @@ export default function Edit({ attributes, setAttributes }) {
 							tagName="p"
 							className="sd-contacts__discription"
 							placeholder="Введите заголовок адреса"
-							value={title_address}
-							onChange={(value) =>
-								onChangeText('title_address', value)
+							value={ title_address }
+							onChange={ ( value ) =>
+								onChangeText( 'title_address', value )
 							}
 						/>
 
@@ -458,50 +551,50 @@ export default function Edit({ attributes, setAttributes }) {
 							tagName="p"
 							className="sd-contacts__tel"
 							placeholder="Введите адрес"
-							value={desc_address}
-							onChange={(value) =>
-								onChangeText('desc_address', value)
+							value={ desc_address }
+							onChange={ ( value ) =>
+								onChangeText( 'desc_address', value )
 							}
 						/>
 
-						{socs && socs.length > 0 && (
+						{ socs && socs.length > 0 && (
 							<>
 								<RichText
 									tagName="p"
 									className="sd-contacts__discription"
 									placeholder="Введите заголовок соцсетей"
-									value={title_socs}
-									onChange={(value) =>
-										onChangeText('title_socs', value)
+									value={ title_socs }
+									onChange={ ( value ) =>
+										onChangeText( 'title_socs', value )
 									}
 								/>
 
 								<div className="sd-footer__socials">
-									{socs.map((item, index) => {
+									{ socs.map( ( item, index ) => {
 										return (
 											<a
-												key={index}
-												href={item.link}
-												title={item.name}
+												key={ index }
+												href={ item.link }
+												title={ item.name }
 											>
 												<img
-													src={item.icon.url}
-													alt={item.name}
+													src={ item.icon.url }
+													alt={ item.name }
 												/>
 											</a>
 										);
-									})}
+									} ) }
 								</div>
 							</>
-						)}
+						) }
 
-						{button.show && (
+						{ button.show && (
 							<RichText
 								tagName="a"
-								value={button.text}
+								value={ button.text }
 								placeholder="Введите текст кнопки"
-								onChange={(value) =>
-									onChangeButtonProp('text', value)
+								onChange={ ( value ) =>
+									onChangeButtonProp( 'text', value )
 								}
 								className={
 									button.modal
@@ -509,28 +602,40 @@ export default function Edit({ attributes, setAttributes }) {
 										: 'sd-button-link'
 								}
 								href={
-									!button.modal && button.link
+									! button.modal && button.link
 										? button.link
 										: '#'
 								}
 								target={
-									!button.modal && button.target
+									! button.modal && button.target
 										? '_blank'
 										: '_self'
 								}
 							/>
-						)}
+						) }
 					</div>
 
 					<div
 						id="ymap"
 						className="sd-contacts__map"
-						data-coordinates={map.coordinates_xy}
-						data-zoom={map.zoom}
-						data-address={map.address}
-						data-icon={iconBaloon}
+						data-coordinates={ map.coordinates_xy }
+						data-zoom={ map.zoom }
+						data-address={ map.address }
+						data-icon={ iconBaloon }
 					>
-						<iframe src={mapUrl} width="560" height="400" frameborder="1" allowfullscreen="true" style={{pointerEvents: "none", width: "100%", height: "100%", opacity: "0.8"}}></iframe>
+						<iframe
+							src={ mapUrl }
+							width="560"
+							height="400"
+							frameborder="1"
+							allowfullscreen="true"
+							style={ {
+								pointerEvents: 'none',
+								width: '100%',
+								height: '100%',
+								opacity: '0.8',
+							} }
+						></iframe>
 					</div>
 				</div>
 			</section>

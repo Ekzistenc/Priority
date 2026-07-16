@@ -1,0 +1,1 @@
+{"version":3,"file":"map/index.css","mappings":";;;AAGG;EACC;AAFJ,C","sources":["webpack://priority-blocks/./src/map/editor.scss"],"sourcesContent":[".wp-block-snd-map {\r\n\t.container {\r\n\t\th2 {\r\n\t\t\tmark {\r\n\t\t\t\tbackground-color: unset;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}"],"names":[],"sourceRoot":""}

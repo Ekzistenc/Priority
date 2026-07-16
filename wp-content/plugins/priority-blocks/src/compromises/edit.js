@@ -24,7 +24,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	};
 
 	const onChangeSliderItem = ( index, value, field ) => {
-		const updatedSlider = JSON.parse(JSON.stringify(slider));
+		const updatedSlider = JSON.parse( JSON.stringify( slider ) );
 		updatedSlider[ index ][ field ] = value;
 		setAttributes( { slider: updatedSlider } );
 	};
@@ -49,8 +49,8 @@ export default function Edit( { attributes, setAttributes } ) {
 				is_preview: false,
 			},
 		};
-		const updatedSlider = JSON.parse(JSON.stringify(slider));
-		updatedSlider.push(newItem);
+		const updatedSlider = JSON.parse( JSON.stringify( slider ) );
+		updatedSlider.push( newItem );
 		setAttributes( { slider: updatedSlider } );
 	};
 
@@ -110,9 +110,19 @@ export default function Edit( { attributes, setAttributes } ) {
 															className="is-secondary is-destructive is-small"
 															title="Удалить слайд"
 															onClick={ () => {
-																const updatedSlider = JSON.parse(JSON.stringify(slider));
-																updatedSlider.splice( index, 1 );
-																setAttributes( { slider: updatedSlider } );
+																const updatedSlider =
+																	JSON.parse(
+																		JSON.stringify(
+																			slider
+																		)
+																	);
+																updatedSlider.splice(
+																	index,
+																	1
+																);
+																setAttributes( {
+																	slider: updatedSlider,
+																} );
 															} }
 														></Button>
 													</summary>

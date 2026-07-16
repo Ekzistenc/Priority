@@ -1,0 +1,1 @@
+{"version":3,"file":"about-wrapper/index.css","mappings":";;;AACC;EACE;AAAH,C","sources":["webpack://priority-blocks/./src/about-wrapper/editor.scss"],"sourcesContent":[".wp-block-snd-about-wrapper {\r\n\ta {\r\n\t\t\tpointer-events: none;\r\n\t\t}\r\n}"],"names":[],"sourceRoot":""}

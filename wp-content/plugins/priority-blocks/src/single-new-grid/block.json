@@ -7,7 +7,7 @@
 	"category": "snd-blocks",
 	"icon": "align-left",
 	"example": {},
-	"parent": ["snd/single-new"],
+	"parent": [ "snd/single-new" ],
 	"attributes": {
 		"text": {
 			"type": "string",

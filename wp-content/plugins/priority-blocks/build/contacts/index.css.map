@@ -1,0 +1,1 @@
+{"version":3,"file":"contacts/index.css","mappings":";;;AACC;EACC;AAAF,C","sources":["webpack://priority-blocks/./src/contacts/editor.scss"],"sourcesContent":[".sd-contacts {\r\n\ta {\r\n\t\tpointer-events: none;\r\n\t}\r\n}"],"names":[],"sourceRoot":""}

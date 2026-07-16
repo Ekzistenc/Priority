@@ -1,0 +1,1 @@
+{"version":3,"file":"layouts/index.css","mappings":";;;AAEE;EACC;AADH,C","sources":["webpack://priority-blocks/./src/layouts/editor.scss"],"sourcesContent":[".wp-block-snd-layouts {\r\n\t.sd-layouts__grid-item {\r\n\t\ta {\r\n\t\t\tpointer-events: none;\r\n\t\t}\r\n\t}\r\n}"],"names":[],"sourceRoot":""}
