@@ -14,10 +14,6 @@
 		"align": {
 			"type": "string",
 			"default": "full"
-		},
-		"projects": {
-			"type": "array",
-			"default": []
 		}
 	},
 	"supports": {

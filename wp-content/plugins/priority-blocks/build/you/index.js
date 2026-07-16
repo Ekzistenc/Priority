@@ -10136,7 +10136,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		const installedChunks = {
 /******/ 			"you/index": 0,
-/******/ 			"about-grid/style-index": 0,
+/******/ 			"about-grid-item/style-index": 0,
 /******/ 			"you/style-index": 0
 /******/ 		};
 /******/ 		
@@ -10187,7 +10187,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["about-grid/style-index","you/style-index"], () => (__webpack_require__("./src/you/index.js")))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["about-grid-item/style-index","you/style-index"], () => (__webpack_require__("./src/you/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

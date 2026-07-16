@@ -95,11 +95,65 @@ return array(
 			'align' => array(
 				'type' => 'string',
 				'default' => 'full'
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'anchor' => true,
+			'align' => true
+		),
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => array(
+			'file:./style-index.css'
+		),
+		'render' => 'file:./render.php'
+	),
+	'about-grid-item' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'snd/about-grid-item',
+		'version' => '0.1.0',
+		'title' => 'Проект',
+		'category' => 'snd-blocks',
+		'icon' => 'plus',
+		'parent' => array(
+			'snd/about-grid'
+		),
+		'example' => array(
+			'viewportWidth' => 1200
+		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
 			),
-			'projects' => array(
-				'type' => 'array',
+			'title' => array(
+				'type' => 'string',
+				'default' => 'Название проекта'
+			),
+			'description' => array(
+				'type' => 'string',
+				'default' => 'Описание проекта'
+			),
+			'image' => array(
+				'type' => 'object',
 				'default' => array(
-					
+					'id' => 0,
+					'url' => '',
+					'alt' => '',
+					'size' => 'large',
+					'sizes' => array(
+						
+					)
+				)
+			),
+			'link' => array(
+				'type' => 'object',
+				'default' => array(
+					'id' => 0,
+					'url' => '',
+					'target' => true
 				)
 			)
 		),

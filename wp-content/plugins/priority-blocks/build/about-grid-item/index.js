@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/main-swiper-slide/index.js"
-/*!****************************************!*\
-  !*** ./src/main-swiper-slide/index.js ***!
-  \****************************************/
+/***/ "./src/about-grid-item/index.js"
+/*!**************************************!*\
+  !*** ./src/about-grid-item/index.js ***!
+  \**************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16,184 +16,117 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _snd_components_SNDMediaUpload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../snd-components/SNDMediaUpload */ "./src/snd-components/SNDMediaUpload/index.js");
-/* harmony import */ var _snd_components_SNDModalButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../snd-components/SNDModalButton */ "./src/snd-components/SNDModalButton/index.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/main-swiper-slide/block.json");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/about-grid-item/block.json");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
 
 
 
-
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_5__.name, {
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
   edit: ({
     attributes,
     setAttributes
   }) => {
     const {
-      title_01,
-      title_02,
-      subtitle,
-      button,
+      title,
+      description,
       image,
-      imageLogo
+      link
     } = attributes;
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-          title: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u0431\u043B\u043E\u043A\u0430",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_snd_components_SNDMediaUpload__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+          title: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u0430",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+            label: "\u0421\u0441\u044B\u043B\u043A\u0430",
+            type: "url",
+            value: link.url || 'https://гк-вместе.рф/#projects',
+            onChange: value => setAttributes({
+              link: {
+                ...link,
+                url: value
+              }
+            }),
+            __nextHasNoMarginBottom: true,
+            __next40pxDefaultSize: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+            __nextHasNoMarginBottom: true,
+            checked: link.target,
+            label: "\u041E\u0442\u043A\u0440\u044B\u0432\u0430\u0442\u044C \u0432 \u043D\u043E\u0432\u043E\u0439 \u0432\u043A\u043B\u0430\u0434\u043A\u0435",
+            onChange: value => setAttributes({
+              link: {
+                ...link,
+                target: value
+              }
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_snd_components_SNDMediaUpload__WEBPACK_IMPORTED_MODULE_3__["default"], {
             onSelect: media => {
-              const size = imageLogo?.size || 'full';
-              const url = media?.sizes?.[size]?.url || media?.sizes?.full?.url || media?.url || '';
+              const size = image?.size || 'large';
+              const url = media?.sizes?.[size]?.url || media?.url || '';
+              const newImage = {
+                id: media?.id || 0,
+                url: url,
+                alt: media?.alt || '',
+                size: size,
+                sizes: media?.sizes || {},
+                type: 'image'
+              };
               setAttributes({
-                imageLogo: {
-                  id: media?.id || 0,
-                  url: url,
-                  alt: media?.alt || '',
-                  size: size,
-                  sizes: media?.sizes || {},
-                  type: 'image'
-                }
+                image: newImage
               });
             },
             allowedTypes: ['image'],
-            value: imageLogo.id,
-            media: imageLogo,
-            onChangeMedia: newImage => {
-              setAttributes({
-                imageLogo: newImage
-              });
-            },
-            label: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u043B\u043E\u0433\u043E\u0442\u0438\u043F",
-            labelButton: `${imageLogo?.url ? 'Изменить' : 'Выбрать'} логотип`
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-            label: "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 1 \u0441\u0442\u0440\u043E\u043A\u0430",
-            value: title_01,
-            onChange: value => setAttributes({
-              title_01: value
-            }),
-            __nextHasNoMarginBottom: true,
-            __next40pxDefaultSize: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-            label: "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 2 \u0441\u0442\u0440\u043E\u043A\u0430",
-            value: title_02,
-            onChange: value => setAttributes({
-              title_02: value
-            }),
-            __nextHasNoMarginBottom: true,
-            __next40pxDefaultSize: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-            label: "\u041F\u043E\u0434\u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A",
-            value: subtitle,
-            onChange: value => setAttributes({
-              subtitle: value
-            }),
-            __nextHasNoMarginBottom: true,
-            __next40pxDefaultSize: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_snd_components_SNDMediaUpload__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            isRenderPhp: true,
-            onSelect: media => {
-              const size = image?.size || 'full';
-              const url = media?.sizes?.[size]?.url || media?.sizes?.full?.url || media?.url || '';
-              setAttributes({
-                image: {
-                  id: media?.id || 0,
-                  url: url,
-                  alt: media?.alt || '',
-                  size: size,
-                  sizes: media?.sizes || {},
-                  type: 'image'
-                }
-              });
-            },
-            allowedTypes: ['image'],
-            value: image.id,
+            value: image?.id || 0,
             media: image,
             onChangeMedia: newImage => {
               setAttributes({
                 image: newImage
               });
             },
-            label: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435",
+            label: 'Выбрать изображение',
             labelButton: `${image?.url ? 'Изменить' : 'Выбрать'} изображение`
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-            label: "\u0422\u0435\u043A\u0441\u0442 \u043A\u043D\u043E\u043F\u043A\u0438",
-            value: button?.name,
-            onChange: value => setAttributes({
-              button: {
-                ...button,
-                name: value
-              }
-            }),
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+            __next40pxDefaultSize: true,
             __nextHasNoMarginBottom: true,
-            __next40pxDefaultSize: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-            label: "URL \u043A\u043D\u043E\u043F\u043A\u0438",
-            type: "url",
-            value: button?.href,
+            label: "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A",
+            value: title || '',
             onChange: value => setAttributes({
-              button: {
-                ...button,
-                href: value
-              }
-            }),
+              title: value
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
+            __next40pxDefaultSize: true,
             __nextHasNoMarginBottom: true,
-            __next40pxDefaultSize: true
+            label: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435",
+            value: description || '',
+            onChange: value => setAttributes({
+              description: value
+            })
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
-          className: 'swiper-slide'
-        }),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-          className: "sd-main",
           style: {
-            backgroundImage: `url(${image?.url})`
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-            className: "container",
-            children: [imageLogo?.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-              src: imageLogo.url,
-              alt: ""
-            }), (title_01 || title_02) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h1", {
-              children: [title_01 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
-                tagName: "span",
-                className: "fade-in-left wow",
-                value: title_01,
-                allowedFormats: [],
-                placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 1 \u0441\u0442\u0440\u043E\u043A\u0430...",
-                onChange: value => setAttributes({
-                  title_01: value
-                })
-              }), title_02 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
-                tagName: "span",
-                className: "fade-in-right-1 wow",
-                value: title_02,
-                allowedFormats: [],
-                placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 2 \u0441\u0442\u0440\u043E\u043A\u0430...",
-                onChange: value => setAttributes({
-                  title_02: value
-                })
-              }), subtitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
-                tagName: "h2",
-                value: subtitle,
-                allowedFormats: [],
-                onChange: value => setAttributes({
-                  subtitle: value
-                }),
-                placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u0434\u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A..."
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
-              className: "sd-main-link",
-              href: button?.href,
-              target: "_blank",
-              children: button?.name
-            })]
-          })
-        })
+            backgroundImage: `url(${image.url})`
+          }
+        }),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+          tagName: "h4",
+          value: title || '',
+          onChange: value => setAttributes({
+            title: value
+          }),
+          allowedFormats: []
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+          tagName: "span",
+          value: description || '',
+          onChange: value => setAttributes({
+            description: value
+          }),
+          allowedFormats: ['core/bold', 'core/italic']
+        })]
       })]
     });
   },
@@ -348,118 +281,6 @@ const SNDMediaUpload = ({
 
 /***/ },
 
-/***/ "./src/snd-components/SNDModalButton/index.js"
-/*!****************************************************!*\
-  !*** ./src/snd-components/SNDModalButton/index.js ***!
-  \****************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   SNDModalButton: () => (/* binding */ SNDModalButton),
-/* harmony export */   SNDModalButtonSave: () => (/* binding */ SNDModalButtonSave),
-/* harmony export */   SNDRichTextModalButton: () => (/* binding */ SNDRichTextModalButton)
-/* harmony export */ });
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-function SNDModalButton({
-  button,
-  setText,
-  setLink,
-  setTarget,
-  setModal,
-  setShow,
-  label = 'КНОПКА',
-  showButtonLabel = 'Показывать кнопку',
-  modalLabel = 'Модальное окно',
-  textButtonLabel = 'Текст кнопки',
-  URLButtonLabel = 'URL кнопки',
-  targetLabel = 'Открывать в новой вкладке',
-  noticeErrorText = 'Введите корректный URL, например: https://example.com'
-}) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "components-base-control",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-      className: "components-base-control__label",
-      style: {
-        display: 'block',
-        marginBottom: '8px'
-      },
-      children: label
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-      __nextHasNoMarginBottom: true,
-      checked: button.show,
-      label: showButtonLabel,
-      onChange: setShow
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-      __nextHasNoMarginBottom: true,
-      checked: button.modal,
-      label: modalLabel,
-      onChange: setModal
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
-      value: button.text,
-      label: textButtonLabel,
-      __nextHasNoMarginBottom: true,
-      onChange: setText
-    }), !button.modal && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
-        label: URLButtonLabel,
-        value: button.link,
-        __nextHasNoMarginBottom: true,
-        onChange: setLink
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-        __nextHasNoMarginBottom: true,
-        checked: button.target,
-        label: targetLabel,
-        onChange: setTarget
-      })]
-    })]
-  });
-}
-function SNDRichTextModalButton({
-  button,
-  setText,
-  className = 'sd-button-link'
-}) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: button.show && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
-      tagName: "a",
-      value: button.text,
-      placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0442\u0435\u043A\u0441\u0442 \u043A\u043D\u043E\u043F\u043A\u0438...",
-      onChange: setText,
-      __nextHasNoMarginBottom: true,
-      className: className,
-      href: !button.modal && button.link ? button.link : '#',
-      target: !button.modal && button.target ? '_blank' : '_self'
-    })
-  });
-}
-function SNDModalButtonSave({
-  button,
-  classList = ''
-}) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: button.show && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-      href: !button.modal && button.link ? button.link : '#',
-      target: !button.modal && button.target ? '_blank' : '_self',
-      className: `sd-burger__tel ${button.modal ? 'sd-button-modal' : 'sd-button-link'} ${classList ? classList : ''}`,
-      children: button.text
-    })
-  });
-}
-
-/***/ },
-
 /***/ "./src/snd-components/SNDMediaUpload/style.scss"
 /*!******************************************************!*\
   !*** ./src/snd-components/SNDMediaUpload/style.scss ***!
@@ -512,23 +333,13 @@ module.exports = window["wp"]["components"];
 
 /***/ },
 
-/***/ "@wordpress/element"
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
+/***/ "./src/about-grid-item/block.json"
+/*!****************************************!*\
+  !*** ./src/about-grid-item/block.json ***!
+  \****************************************/
 (module) {
 
-module.exports = window["wp"]["element"];
-
-/***/ },
-
-/***/ "./src/main-swiper-slide/block.json"
-/*!******************************************!*\
-  !*** ./src/main-swiper-slide/block.json ***!
-  \******************************************/
-(module) {
-
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/main-swiper-slide","version":"0.1.1","title":"Посадочный блок слайд","category":"snd-blocks","icon":"format-image","parent":["snd/main-swiper-wrapper"],"example":{"viewportWidth":1200},"attributes":{"align":{"type":"string","default":"full"},"title_01":{"type":"string","default":"Единственный дом","selector":"span"},"title_02":{"type":"string","default":"бизнес-класса<br>в&nbsp;Братске","selector":"span"},"subtitle":{"type":"string","default":"Ипотека от 32 575 рублей в месяц"},"button":{"type":"object","default":{"name":"Выбрать квартиру","href":"/#layouts","target":false}},"imageLogo":{"type":"object","default":{"id":0,"url":"","alt":"","size":"medium"}},"image":{"type":"object","default":{"id":0,"url":"","alt":"","size":"2048x2048","sizes":{}}}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":["file:./style-index.css"],"render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/about-grid-item","version":"0.1.0","title":"Проект","category":"snd-blocks","icon":"plus","parent":["snd/about-grid"],"example":{"viewportWidth":1200},"attributes":{"align":{"type":"string","default":"full"},"title":{"type":"string","default":"Название проекта"},"description":{"type":"string","default":"Описание проекта"},"image":{"type":"object","default":{"id":0,"url":"","alt":"","size":"large","sizes":{}}},"link":{"type":"object","default":{"id":0,"url":"","target":true}}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":["file:./style-index.css"],"render":"file:./render.php"}');
 
 /***/ }
 
@@ -663,7 +474,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		const installedChunks = {
-/******/ 			"main-swiper-slide/index": 0,
+/******/ 			"about-grid-item/index": 0,
 /******/ 			"about-grid-item/style-index": 0
 /******/ 		};
 /******/ 		
@@ -714,7 +525,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["about-grid-item/style-index"], () => (__webpack_require__("./src/main-swiper-slide/index.js")))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["about-grid-item/style-index"], () => (__webpack_require__("./src/about-grid-item/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

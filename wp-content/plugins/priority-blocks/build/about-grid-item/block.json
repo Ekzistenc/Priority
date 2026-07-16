@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/about-grid-item",
+  "version": "0.1.0",
+  "title": "Проект",
+  "category": "snd-blocks",
+  "icon": "plus",
+  "parent": [
+    "snd/about-grid"
+  ],
+  "example": {
+    "viewportWidth": 1200
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "title": {
+      "type": "string",
+      "default": "Название проекта"
+    },
+    "description": {
+      "type": "string",
+      "default": "Описание проекта"
+    },
+    "image": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "url": "",
+        "alt": "",
+        "size": "large",
+        "sizes": {}
+      }
+    },
+    "link": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "url": "",
+        "target": true
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": [
+    "file:./style-index.css"
+  ],
+  "render": "file:./render.php"
+}
