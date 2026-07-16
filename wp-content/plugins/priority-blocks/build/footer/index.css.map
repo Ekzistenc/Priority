@@ -1,1 +1,0 @@
-{"version":3,"file":"footer/index.css","mappings":";;;AACE;EACE;AAAJ,C","sources":["webpack://priority-blocks/./src/footer/editor.scss"],"sourcesContent":[".sd-footer {\r\n  a {\r\n    pointer-events: none;\r\n  }\r\n}"],"names":[],"sourceRoot":""}

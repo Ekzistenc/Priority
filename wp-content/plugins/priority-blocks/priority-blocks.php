@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Priority Blocks
  * Description:       Блоки для Priority Theme
- * Version:           0.1.1
+ * Version:           0.1.2
  * Requires at least: 6.7
  * Requires PHP:      7.4
  * Author:            Команда СайтыиДизайн.рф

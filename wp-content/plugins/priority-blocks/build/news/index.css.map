@@ -1,1 +1,0 @@
-{"version":3,"file":"news/index.css","mappings":";;;AACC;EACC;EACA;AAAF,C","sources":["webpack://priority-blocks/./src/news/editor.scss"],"sourcesContent":[".sd-news {\r\n\ta {\r\n\t\tpointer-events: none;\r\n\t\ttext-decoration: none;\r\n\t}\r\n}"],"names":[],"sourceRoot":""}

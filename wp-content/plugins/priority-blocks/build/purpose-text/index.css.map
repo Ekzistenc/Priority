@@ -1,1 +1,0 @@
-{"version":3,"file":"purpose-text/index.css","mappings":";;;AAAA;EACC;EACA;AACD,C","sources":["webpack://priority-blocks/./src/purpose-text/editor.scss"],"sourcesContent":[".wp-block-create-block-my-custom-block {\r\n\tborder: 1px dotted #f00;\r\n\tbackground-color: red;\r\n}\r\n"],"names":[],"sourceRoot":""}

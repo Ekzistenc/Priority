@@ -1,1 +1,0 @@
-{"version":3,"file":"club-home/index.css","mappings":";;;AACC;EACC;AAAF,C","sources":["webpack://priority-blocks/./src/club-home/editor.scss"],"sourcesContent":[".wp-block-snd-club-home {\r\n\ta {\r\n\t\ttext-decoration: none;\r\n\t}\r\n}"],"names":[],"sourceRoot":""}
