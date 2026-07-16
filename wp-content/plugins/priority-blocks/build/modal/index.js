@@ -426,7 +426,7 @@ module.exports = window["wp"]["element"];
   \******************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/modal","version":"0.1.0","title":"Модальное окно","category":"snd-theme","icon":"button","attributes":{"image_logo":{"type":"object","default":{"id":0,"url":"","alt":""}},"image_bg":{"type":"object","default":{"id":0,"url":"","alt":""}},"title":{"type":"string","default":"Пожалуйста, укажите номер..."}},"supports":{"html":false},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":["dialog-polyfill","file:./view.js"],"viewStyle":["dialog-polyfill"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/modal","version":"0.1.0","title":"Модальное окно","category":"snd-theme","icon":"button","attributes":{"align":{"type":"string","default":"full"},"image_logo":{"type":"object","default":{"id":0,"url":"","alt":""}},"image_bg":{"type":"object","default":{"id":0,"url":"","alt":""}},"title":{"type":"string","default":"Пожалуйста, укажите номер..."}},"supports":{"html":false},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":["dialog-polyfill","file:./view.js"],"viewStyle":["dialog-polyfill"]}');
 
 /***/ }
 

@@ -10014,7 +10014,7 @@ function invariant(condition, message) {
   \************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/compromises","version":"0.1.0","title":"Галерея","category":"snd-blocks","icon":"format-gallery","example":{"viewportWidth":1200},"attributes":{"title":{"type":"string","default":"Оставьте компромиссы в прошлом. Привилегии — они в настоящем."},"slider":{"type":"array","default":[]}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":["swiper","glightbox","file:./view.js"],"viewStyle":["swiper","glightbox"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/compromises","version":"0.1.0","title":"Галерея","category":"snd-blocks","icon":"format-gallery","example":{"viewportWidth":1200},"attributes":{"align":{"type":"string","default":"full"},"title":{"type":"string","default":"Оставьте компромиссы в прошлом. Привилегии — они в настоящем."},"slider":{"type":"array","default":[]}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":["swiper","glightbox","file:./view.js"],"viewStyle":["swiper","glightbox"]}');
 
 /***/ }
 

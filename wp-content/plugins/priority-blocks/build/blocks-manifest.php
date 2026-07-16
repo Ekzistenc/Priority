@@ -160,6 +160,12 @@ return array(
 			'anchor' => true,
 			'align' => true
 		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			)
+		),
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'render' => 'file:./render.php',
@@ -177,6 +183,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title_01' => array(
 				'type' => 'string',
 				'default' => 'Запишитесь на экскурсию'
@@ -248,6 +258,10 @@ return array(
 			'viewportWidth' => 1200
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Оставьте компромиссы в прошлом. Привилегии — они в настоящем.'
@@ -289,6 +303,10 @@ return array(
 			'viewportWidth' => 1200
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Контакты'
@@ -367,6 +385,10 @@ return array(
 			'viewportWidth' => 1200
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Вид на башню Priority снаружи'
@@ -408,6 +430,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'number_phone' => array(
 				'type' => 'string',
 				'default' => '+7 (999) 999-99-99'
@@ -468,6 +494,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'number_phone' => array(
 				'type' => 'string',
 				'default' => '+7 (999) 999-99-99'
@@ -519,6 +549,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'number_phone' => array(
 				'type' => 'string',
 				'default' => '+7 (999) 999-99-99'
@@ -585,6 +619,10 @@ return array(
 			'viewportWidth' => 1200
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'category' => array(
 				'type' => 'string',
 				'default' => ''
@@ -881,6 +919,10 @@ return array(
 		'category' => 'snd-theme',
 		'icon' => 'button',
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'image_logo' => array(
 				'type' => 'object',
 				'default' => array(
@@ -932,6 +974,12 @@ return array(
 			'anchor' => true,
 			'align' => true
 		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			)
+		),
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'render' => 'file:./render.php',
@@ -953,6 +1001,12 @@ return array(
 			'align' => true,
 			'anchor' => true
 		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			)
+		),
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
@@ -970,6 +1024,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title_01' => array(
 				'type' => 'string',
 				'default' => 'Гармония —'
@@ -1008,6 +1066,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title_01' => array(
 				'type' => 'string',
 				'default' => 'Эта Цель — быть лучшим.'
@@ -1050,6 +1112,12 @@ return array(
 			'anchor' => true,
 			'align' => true
 		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			)
+		),
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css'
@@ -1069,6 +1137,10 @@ return array(
 			'snd/single-new'
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'text' => array(
 				'type' => 'string',
 				'default' => ''
@@ -1099,6 +1171,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Башня «Первый Priority»'
@@ -1146,6 +1222,10 @@ return array(
 			'viewportWidth' => 1200
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Видеогалерея'
@@ -1184,6 +1264,10 @@ return array(
 			'align' => true
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Вы разбираетесь в жизни.'

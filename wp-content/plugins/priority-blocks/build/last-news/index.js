@@ -373,7 +373,7 @@ module.exports = window["wp"]["element"];
   \**********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/last-news","version":"0.1.0","title":"Последние новости","category":"snd-blocks","icon":"format-aside","example":{"viewportWidth":1200},"attributes":{"category":{"type":"string","default":""},"title":{"type":"string","default":"Последние новости"},"count":{"type":"number","default":"3"},"anchor":{"type":"string"},"button":{"type":"object","default":{"text":"Смотреть все новости","link":"","target":false,"modal":false,"show":true}}},"supports":{"html":false,"align":true,"anchor":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/last-news","version":"0.1.0","title":"Последние новости","category":"snd-blocks","icon":"format-aside","example":{"viewportWidth":1200},"attributes":{"align":{"type":"string","default":"full"},"category":{"type":"string","default":""},"title":{"type":"string","default":"Последние новости"},"count":{"type":"number","default":"3"},"anchor":{"type":"string"},"button":{"type":"object","default":{"text":"Смотреть все новости","link":"","target":false,"modal":false,"show":true}}},"supports":{"html":false,"align":true,"anchor":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ }
 

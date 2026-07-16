@@ -9915,7 +9915,7 @@ function invariant(condition, message) {
   \*********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/exterier","version":"0.1.0","title":"Галерея 2","category":"snd-blocks","icon":"images-alt2","example":{"viewportWidth":1200},"attributes":{"title":{"type":"string","default":"Вид на башню Priority снаружи"},"slider":{"type":"array","default":[]}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":["swiper","glightbox","file:./view.js"],"viewStyle":["swiper","glightbox"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/exterier","version":"0.1.0","title":"Галерея 2","category":"snd-blocks","icon":"images-alt2","example":{"viewportWidth":1200},"attributes":{"align":{"type":"string","default":"full"},"title":{"type":"string","default":"Вид на башню Priority снаружи"},"slider":{"type":"array","default":[]}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":["swiper","glightbox","file:./view.js"],"viewStyle":["swiper","glightbox"]}');
 
 /***/ }
 

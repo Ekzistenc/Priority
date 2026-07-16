@@ -8,6 +8,10 @@
 	"icon": "heading",
 	"example": {},
 	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
 		"title_01": {
 			"type": "string",
 			"default": "Эта Цель — быть лучшим."

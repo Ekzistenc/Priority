@@ -225,7 +225,7 @@ module.exports = window["wp"]["components"];
   \********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/purpose","version":"0.1.0","title":"Цель (Паралакс)","category":"snd-blocks","icon":"building","example":{},"attributes":{"title_01":{"type":"string","default":"Гармония —"},"title_02":{"type":"string","default":"вот главное слово"},"title_03":{"type":"string","default":"для вашего Дома."}},"supports":{"html":false,"anchor":true,"align":true,"background":{"backgroundImage":true,"backgroundSize":true}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/purpose","version":"0.1.0","title":"Цель (Паралакс)","category":"snd-blocks","icon":"building","example":{},"attributes":{"align":{"type":"string","default":"full"},"title_01":{"type":"string","default":"Гармония —"},"title_02":{"type":"string","default":"вот главное слово"},"title_03":{"type":"string","default":"для вашего Дома."}},"supports":{"html":false,"anchor":true,"align":true,"background":{"backgroundImage":true,"backgroundSize":true}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ }
 

@@ -9,6 +9,10 @@
 	"example": {},
 	"parent": [ "snd/single-new" ],
 	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
 		"text": {
 			"type": "string",
 			"default": ""

@@ -8,6 +8,10 @@
   "icon": "menu-alt3",
   "example": {},
   "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
     "number_phone": {
       "type": "string",
       "default": "+7 (999) 999-99-99"

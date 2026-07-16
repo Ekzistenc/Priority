@@ -259,7 +259,7 @@ module.exports = window["wp"]["components"];
   \*************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/purpose-text","version":"0.1.0","title":"Цель Текст","category":"snd-blocks","icon":"heading","example":{},"attributes":{"title_01":{"type":"string","default":"Эта Цель — быть лучшим."},"title_02":{"type":"string","default":"Быть первым."},"title_03":{"type":"string","default":"Быть исключительным."},"subtitle":{"type":"string","default":"Поэтому мы строим клубный дом «Первый Priority» для Вас."}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"snd/purpose-text","version":"0.1.0","title":"Цель Текст","category":"snd-blocks","icon":"heading","example":{},"attributes":{"align":{"type":"string","default":"full"},"title_01":{"type":"string","default":"Эта Цель — быть лучшим."},"title_02":{"type":"string","default":"Быть первым."},"title_03":{"type":"string","default":"Быть исключительным."},"subtitle":{"type":"string","default":"Поэтому мы строим клубный дом «Первый Priority» для Вас."}},"supports":{"html":false,"anchor":true,"align":true},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ }
 
