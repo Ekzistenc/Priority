@@ -132,6 +132,7 @@
 		padding: 15px 3px 3px 3px;
 	}
 
+	.sd-layouts__image-placeholder,
 	.glightbox2 {
 		width: 100%;
 		height: clamp(6.688rem, 3.775rem + 12.43vw, 18.688rem);
@@ -146,6 +147,12 @@
 			height: 100%;
 			object-fit: contain;
 		}
+	}
+
+	.sd-layouts__image-placeholder {
+		background: rgba(34, 36, 53, 0.168627451);
+		border-radius: 10px;
+		cursor: default;
 	}
 
 	h4 {
@@ -351,7 +358,7 @@
 				overflow: hidden;
 				box-sizing: border-box;
 
-				.glightbox {
+				.glightbox-gallery {
 					display: flex;
 					height: 100%;
 

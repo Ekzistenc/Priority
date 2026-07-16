@@ -1,27 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-	(function () {
+document.addEventListener( 'DOMContentLoaded', () => {
+	( function () {
 		// Находим все элементы, класс которых начинается с "glightbox" и содержит цифру
-		const allElements = document.querySelectorAll('[class*="glightbox"]');
+		const allElements = document.querySelectorAll( '[class*="glightbox"]' );
 
 		// Собираем уникальные селекторы
 		const selectors = new Set();
 
-		allElements.forEach(el => {
+		allElements.forEach( ( el ) => {
 			// Проходим по всем классам элемента
-			el.classList.forEach(className => {
+			el.classList.forEach( ( className ) => {
 				// Проверяем, подходит ли класс под шаблон: начинается с "glightbox" и заканчивается цифрой
-				if (/^glightbox\d+$/.test(className)) {
-					selectors.add('.' + className);
+				if ( /^glightbox\d+$/.test( className ) ) {
+					selectors.add( '.' + className );
 				}
-			});
-		});
+			} );
+		} );
 
 		// Инициализируем GLightbox для каждого найденного селектора
-		selectors.forEach(selector => {
-			GLightbox({
-				selector: selector
-			});
-		});
-	})();
-
-});
+		selectors.forEach( ( selector ) => {
+			GLightbox( {
+				selector: selector,
+			} );
+		} );
+	} )();
+} );

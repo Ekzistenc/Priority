@@ -1,9 +1,12 @@
 import { useBlockProps, RichText, InnerBlocks } from '@wordpress/block-editor';
 
 export default function save() {
-
 	return (
-		<section {...useBlockProps.save({ className: 'sd-exterier sd-exterier--video' })}>
+		<section
+			{ ...useBlockProps.save( {
+				className: 'sd-exterier sd-exterier--video',
+			} ) }
+		>
 			<div className="container">
 				<div className="sd-exterier__heading">
 					<div className="sd-compromises__slider-buttons">

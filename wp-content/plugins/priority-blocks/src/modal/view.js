@@ -1,5 +1,5 @@
 document.addEventListener( 'DOMContentLoaded', () => {
-	if (!document.getElementById('modalDialog')) return;
+	if ( ! document.getElementById( 'modalDialog' ) ) return;
 
 	const body = document.querySelector( 'body' );
 	const dialog = document.getElementById( 'modalDialog' );
@@ -10,29 +10,29 @@ document.addEventListener( 'DOMContentLoaded', () => {
 		dialogPolyfill.registerDialog( dialog );
 	}
 
-	document.body.addEventListener('click', (e) => {
-		const el = e.target.closest('.sd-modal-link');
+	document.body.addEventListener( 'click', ( e ) => {
+		const el = e.target.closest( '.sd-modal-link' );
 
-		if (el) {
+		if ( el ) {
 			e.preventDefault();
 
-			const title = el.getAttribute('data-title');
+			const title = el.getAttribute( 'data-title' );
 			const subject_field = dialog.querySelector(
 				'input[name="text-subject"]'
 			);
 
-			if (title && subject_field) {
+			if ( title && subject_field ) {
 				subject_field.value = title;
-			} else if (subject_field) {
+			} else if ( subject_field ) {
 				subject_field.value = 'Заявка из формы обратной связи';
 			}
 
-			setTimeout(() => {
+			setTimeout( () => {
 				dialog.show();
-				body.classList.add('body-overflow');
-			}, 0);
+				body.classList.add( 'body-overflow' );
+			}, 0 );
 		}
-	});
+	} );
 
 	function handleClose() {
 		const keyFrame = new KeyframeEffect(
@@ -59,7 +59,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 	close.addEventListener( 'click', handleClose );
 
 	document.addEventListener( 'click', ( el ) => {
-		if (!dialog.hasAttribute('open')) return;
+		if ( ! dialog.hasAttribute( 'open' ) ) return;
 
 		let target = el.target;
 		const it_elems_not_close = [

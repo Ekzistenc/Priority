@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Priority Blocks
  * Description:       Блоки для Priority Theme
- * Version:           0.1.1
+ * Version:           0.1.2
  * Requires at least: 6.7
  * Requires PHP:      7.4
  * Author:            Команда СайтыиДизайн.рф
@@ -25,26 +25,25 @@ require_once SND_PRTY_BLOCKS_DIR . 'includes/breadcrumbs.php';
 
 function snd_block_categories($categories)
 {
-  $include = true;
-  $slug = 'snd-blocks';
-  $title = 'Priority Blocks';
+  $custom = [
+    [
+      'slug'  => 'snd-blocks',
+      'title' => 'Priority Blocks',
+    ],
+    [
+      'slug'  => 'snd-theme',
+      'title' => 'Priority Theme',
+    ],
+  ];
 
-  foreach ($categories as $category) {
-    if ($slug === $category['slug']) {
-      $include = false;
-    }
-  }
+  $existing_slugs = array_column($categories, 'slug');
+  $to_prepend = array_filter(
+    $custom,
+    static fn($category) => !in_array($category['slug'], $existing_slugs, true)
+  );
 
-  if ($include) {
-    $categories = array_merge(
-      [
-        [
-          'slug'  => $slug,
-          'title' => $title,
-        ],
-      ],
-      $categories
-    );
+  if ($to_prepend) {
+    $categories = array_merge(array_values($to_prepend), $categories);
   }
 
   return $categories;

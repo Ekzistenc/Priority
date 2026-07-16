@@ -4,10 +4,14 @@
 	"name": "snd/header-page",
 	"version": "0.1.0",
 	"title": "HEADER for Pages",
-	"category": "snd-blocks",
+	"category": "snd-theme",
 	"icon": "menu-alt2",
 	"example": {},
 	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
 		"number_phone": {
 			"type": "string",
 			"default": "+7 (999) 999-99-99"

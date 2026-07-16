@@ -4,13 +4,19 @@
   "name": "snd/breadcrumbs",
   "version": "0.1.0",
   "title": "Хлебные крошки",
-  "category": "snd-blocks",
+  "category": "snd-theme",
   "icon": "ellipsis",
   "example": {},
   "supports": {
     "html": false,
     "anchor": true,
     "align": true
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
   },
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",

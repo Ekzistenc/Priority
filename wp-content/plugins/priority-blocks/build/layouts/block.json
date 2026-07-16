@@ -45,6 +45,10 @@
     },
     "anchor": {
       "type": "string"
+    },
+    "align": {
+      "type": "string",
+      "default": "full"
     }
   },
   "supports": {

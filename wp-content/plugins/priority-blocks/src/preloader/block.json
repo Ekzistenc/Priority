@@ -4,13 +4,19 @@
 	"name": "snd/preloader",
 	"version": "0.1.0",
 	"title": "Прелоадер",
-	"category": "snd-blocks",
+	"category": "snd-theme",
 	"icon": "welcome-view-site",
 	"example": {},
 	"supports": {
 		"html": false,
 		"align": true,
 		"anchor": true
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
 	},
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

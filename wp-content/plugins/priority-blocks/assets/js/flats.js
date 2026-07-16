@@ -1,99 +1,104 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener( 'DOMContentLoaded', () => {
 	// AJAX Подробнее
-	(function () {
-		const modal = document.querySelector('.sd-modal_form');
-		if (!modal) return;
+	( function () {
+		const modal = document.querySelector( '.sd-modal_form' );
+		if ( ! modal ) return;
 
-		const openButtons = document.querySelectorAll('.sd-modal-link-l');
-		const closeButton = document.querySelector('.sd-modal__close_form');
-		const overlay = document.querySelector('.sd-modal__overlay_form');
+		const openButtons = document.querySelectorAll( '.sd-modal-link-l' );
+		const closeButton = document.querySelector( '.sd-modal__close_form' );
+		const overlay = document.querySelector( '.sd-modal__overlay_form' );
 		const body = document.body;
 
 		// Функция открытия
 		function openModal() {
-			modal.classList.add('open');
-			document.querySelector('.sd-modal__body_form').classList.add('open');
-			body.classList.add('body-overflow'); // Блокируем скролл
+			modal.classList.add( 'open' );
+			document
+				.querySelector( '.sd-modal__body_form' )
+				.classList.add( 'open' );
+			body.classList.add( 'body-overflow' ); // Блокируем скролл
 		}
 
 		// Функция закрытия
 		function closeModal() {
-			modal.classList.remove('open');
-			document.querySelector('.sd-modal__body_form').classList.remove('open');
-			body.classList.remove('body-overflow');
+			modal.classList.remove( 'open' );
+			document
+				.querySelector( '.sd-modal__body_form' )
+				.classList.remove( 'open' );
+			body.classList.remove( 'body-overflow' );
 		}
 
 		// Открытие по всем кнопкам
-		openButtons.forEach((btn) => {
-			btn.addEventListener('click', (e) => {
+		document.addEventListener( 'click', ( e ) => {
+			if ( e.target.classList.contains( 'sd-modal-link-l' ) ) {
 				e.preventDefault();
-
-				ajaxLoadFlat(btn);
-			});
-		});
+				ajaxLoadFlat( e.target );
+			}
+		} );
 
 		// Закрытие по крестику
-		if (closeButton) {
-			closeButton.addEventListener('click', (e) => {
+		if ( closeButton ) {
+			closeButton.addEventListener( 'click', ( e ) => {
 				e.preventDefault();
 				closeModal();
-			});
+			} );
 		}
 
 		// Закрытие по клику на оверлей
-		if (overlay) {
-			overlay.addEventListener('click', () => {
+		if ( overlay ) {
+			overlay.addEventListener( 'click', () => {
 				closeModal();
-			});
+			} );
 		}
 
 		// Закрытие по Escape
-		document.addEventListener('keydown', (e) => {
-			if (e.key === 'Escape' && modal.classList.contains('open')) {
+		document.addEventListener( 'keydown', ( e ) => {
+			if ( e.key === 'Escape' && modal.classList.contains( 'open' ) ) {
 				closeModal();
 			}
-		});
+		} );
 
-		function ajaxLoadFlat(button) {
-			const parent = button.closest('.sd-layouts__table');
-			const modalFormContent = document.querySelector('.sd-modal_form .sd-modal__content_form');
+		function ajaxLoadFlat( button ) {
+			const parent = button.closest( '.sd-layouts__table' );
+			const modalFormContent = document.querySelector(
+				'.sd-modal_form .sd-modal__content_form'
+			);
 			const ajaxurl = flats_ajax_object.ajaxurl;
 			const nonce = flats_ajax_object.nonce;
-			const id =
-				Number(button.getAttribute('data-id')) || 0;
+			const id = Number( button.getAttribute( 'data-id' ) ) || 0;
 
 			const formData = new FormData();
-			formData.append('action', 'loading_flat_content');
-			formData.append('nonce', nonce);
-			formData.append('id', id);
+			formData.append( 'action', 'loading_flat_content' );
+			formData.append( 'nonce', nonce );
+			formData.append( 'id', id );
 
-			parent.classList.add('loading');
+			parent.classList.add( 'loading' );
 
-			fetch(ajaxurl, {
+			fetch( ajaxurl, {
 				method: 'POST',
 				body: formData,
-			})
-				.then(response => response.json())
-				.then(response => {
+			} )
+				.then( ( response ) => response.json() )
+				.then( ( response ) => {
 					modalFormContent.innerHTML = response.data.html;
-					if (!response.success) {
-						console.log('Ответ сервера:', response.data.console);
+					if ( ! response.success ) {
+						console.log( 'Ответ сервера:', response.data.console );
 					}
-				})
-				.catch(error => {
+				} )
+				.catch( ( error ) => {
 					// Если запрос не произошел
-					console.error('Error:', error);
-				}).finally(() => {
-					parent.classList.remove('loading');
+					console.error( 'Error:', error );
+				} )
+				.finally( () => {
+					parent.classList.remove( 'loading' );
 					openModal();
 					initFlatSwiper();
 					initGlightboxGallery();
-				});
+				} );
 		}
-	})();
+	} )();
 
 	function initFlatSwiper() {
-		const swiperCardSmall = new Swiper(".swiper-card-small", {
+		const swiperCardSmall = new Swiper( '.swiper-card-small', {
 			spaceBetween: 10,
 			slidesPerView: 3,
 			slideThumbActiveClass: 'sd-card__slide-small_active',
@@ -102,9 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				nextEl: '.swiper-card-small-next',
 				prevEl: '.swiper-card-small-prev',
 			},
-		});
+		} );
 
-		const swiperCardBig = new Swiper(".swiper-card", {
+		const swiperCardBig = new Swiper( '.swiper-card', {
 			spaceBetween: 10,
 
 			thumbs: {
@@ -118,13 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
 				el: '.swiper-pagination-card',
 				clickable: true,
 			},
-		});
+		} );
 	}
 
 	function initGlightboxGallery() {
-		GLightbox({
+		GLightbox( {
 			selector: '.glightbox-gallery',
-		});
+		} );
 	}
 
 	// AJAX Показать еще
@@ -150,6 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					Number( button.getAttribute( 'data-count' ) ) || 0;
 				const offset =
 					Number( button.getAttribute( 'data-offset' ) ) || 0;
+				const cardTextButton =
+					button.getAttribute( 'data-card-text-button' ) ||
+					'Подробнее';
 				const ajaxurl = flats_ajax_object.ajaxurl;
 				const nonce = flats_ajax_object.nonce;
 
@@ -157,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					action: 'ajax_flats',
 					count,
 					offset,
+					cardTextButton,
 					nonce,
 				};
 

@@ -8,6 +8,10 @@
   "icon": "text-page",
   "example": {},
   "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
     "title": {
       "type": "string",
       "default": "Башня «Первый Priority»"

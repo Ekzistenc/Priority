@@ -10,6 +10,10 @@
 		"viewportWidth": 1200
 	},
 	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
 		"title": {
 			"type": "string",
 			"default": "Контакты"
@@ -69,5 +73,5 @@
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"viewScript": ["ymap", "file:./view.js"]
+	"viewScript": [ "ymap", "file:./view.js" ]
 }

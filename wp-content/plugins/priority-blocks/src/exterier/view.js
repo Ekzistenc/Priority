@@ -6,34 +6,48 @@ document.addEventListener( 'DOMContentLoaded', () => {
 				addIndexClass( swiperItem, index, 'swiper-exterier' );
 				addIndexClass( swiperItem, index, 'swiper-exterier-next' );
 				addIndexClass( swiperItem, index, 'swiper-exterier-prev' );
-				addIndexClass( swiperItem, index, 'swiper-pagination-exterier' );
+				addIndexClass(
+					swiperItem,
+					index,
+					'swiper-pagination-exterier'
+				);
 				addIndexClass( swiperItem, index, 'swiper-counter-exterier' );
 
-				const swiperExterier = new Swiper(`.swiper-exterier-${index}`, {
-					spaceBetween: 10,
-					direction: 'horizontal',
-					navigation: {
-						nextEl: `.swiper-exterier-next-${index}`,
-						prevEl: `.swiper-exterier-prev-${index}`,
-					},
-					pagination: {
-						el: `.swiper-pagination-exterier-${index}`,
-						clickable: true,
-					},
+				const swiperExterier = new Swiper(
+					`.swiper-exterier-${ index }`,
+					{
+						spaceBetween: 10,
+						direction: 'horizontal',
+						navigation: {
+							nextEl: `.swiper-exterier-next-${ index }`,
+							prevEl: `.swiper-exterier-prev-${ index }`,
+						},
+						pagination: {
+							el: `.swiper-pagination-exterier-${ index }`,
+							clickable: true,
+						},
 
-					breakpoints: {
-						1200: {
-							pagination: {
-								el: `.swiper-counter-exterier-${index}`,
-								type: 'fraction',
-								clickable: true,
-								renderFraction: function (currentClass, totalClass) {
-									return '<span class="' + currentClass + '"></span>';
-								}
+						breakpoints: {
+							1200: {
+								pagination: {
+									el: `.swiper-counter-exterier-${ index }`,
+									type: 'fraction',
+									clickable: true,
+									renderFraction: function (
+										currentClass,
+										totalClass
+									) {
+										return (
+											'<span class="' +
+											currentClass +
+											'"></span>'
+										);
+									},
+								},
 							},
-						}
-					},
-				});
+						},
+					}
+				);
 			} );
 
 		function addIndexClass( parent, index, selector ) {
@@ -53,8 +67,10 @@ document.addEventListener( 'DOMContentLoaded', () => {
 			lightbox.on( 'open', () => {} );
 		};
 
-		document.querySelectorAll('.sd-exterier').forEach((swiperItem, index) => {
-			initLightbox( `.swiper-exterier-${index} .glightbox3` );
-		});
+		document
+			.querySelectorAll( '.sd-exterier' )
+			.forEach( ( swiperItem, index ) => {
+				initLightbox( `.swiper-exterier-${ index } .glightbox3` );
+			} );
 	} )();
 } );

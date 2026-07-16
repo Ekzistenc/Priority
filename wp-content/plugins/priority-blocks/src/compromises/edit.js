@@ -24,7 +24,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	};
 
 	const onChangeSliderItem = ( index, value, field ) => {
-		const updatedSlider = JSON.parse(JSON.stringify(slider));
+		const updatedSlider = JSON.parse( JSON.stringify( slider ) );
 		updatedSlider[ index ][ field ] = value;
 		setAttributes( { slider: updatedSlider } );
 	};
@@ -49,8 +49,8 @@ export default function Edit( { attributes, setAttributes } ) {
 				is_preview: false,
 			},
 		};
-		const updatedSlider = JSON.parse(JSON.stringify(slider));
-		updatedSlider.push(newItem);
+		const updatedSlider = JSON.parse( JSON.stringify( slider ) );
+		updatedSlider.push( newItem );
 		setAttributes( { slider: updatedSlider } );
 	};
 
@@ -110,9 +110,19 @@ export default function Edit( { attributes, setAttributes } ) {
 															className="is-secondary is-destructive is-small"
 															title="Удалить слайд"
 															onClick={ () => {
-																const updatedSlider = JSON.parse(JSON.stringify(slider));
-																updatedSlider.splice( index, 1 );
-																setAttributes( { slider: updatedSlider } );
+																const updatedSlider =
+																	JSON.parse(
+																		JSON.stringify(
+																			slider
+																		)
+																	);
+																updatedSlider.splice(
+																	index,
+																	1
+																);
+																setAttributes( {
+																	slider: updatedSlider,
+																} );
 															} }
 														></Button>
 													</summary>
@@ -223,85 +233,17 @@ export default function Edit( { attributes, setAttributes } ) {
 																					}
 																				/>
 																			</div>
-
-																			<ToggleControl
-																				__nextHasNoMarginBottom={
-																					true
-																				}
-																				checked={
-																					slider[
-																						index
-																					]
-																						?.image1
-																						?.is_preview
-																				}
-																				label="Использовать как превью"
-																				onChange={ () => {
-																					const image_01 =
-																						{
-																							...slider[
-																								index
-																							]
-																								.image1,
-																							is_preview:
-																								! slider[
-																									index
-																								]
-																									.image1
-																									.is_preview,
-																						};
-
-																					const image_02 =
-																						{
-																							...slider[
-																								index
-																							]
-																								.image2,
-																							is_preview:
-																								! slider[
-																									index
-																								]
-																									.image2
-																									.is_preview,
-																						};
-
-																					onChangeSliderItem(
-																						index,
-																						image_01,
-																						'image1'
-																					);
-																					onChangeSliderItem(
-																						index,
-																						image_02,
-																						'image2'
-																					);
-																				} }
-																			/>
 																		</>
 																	) }
 
 																	<div className="components-base-control__media-buttons">
 																		<Button
 																			variant={
-																				slider[
-																					index
-																				]
-																					?.image1
-																					?.id
-																					? 'secondary'
-																					: 'primary'
+																				slider[index]?.image1?.id ? 'secondary' : 'primary'
 																			}
-																			onClick={
-																				open
-																			}
+																			onClick={open}
 																		>
-																			{ slider[
-																				index
-																			]
-																				?.image1
-																				?.id
-																				? 'Изменить'
-																				: 'Выбрать' }{ ' ' }
+																			{ slider[index]?.image1?.id ? 'Изменить' : 'Выбрать' }{ ' ' }
 																			изображение
 																		</Button>
 
@@ -433,60 +375,6 @@ export default function Edit( { attributes, setAttributes } ) {
 																					}
 																				/>
 																			</div>
-
-																			<ToggleControl
-																				__nextHasNoMarginBottom={
-																					true
-																				}
-																				checked={
-																					slider[
-																						index
-																					]
-																						?.image2
-																						?.is_preview
-																				}
-																				label="Использовать как превью"
-																				onChange={ () => {
-																					const image_01 =
-																						{
-																							...slider[
-																								index
-																							]
-																								.image1,
-																							is_preview:
-																								! slider[
-																									index
-																								]
-																									.image1
-																									.is_preview,
-																						};
-
-																					const image_02 =
-																						{
-																							...slider[
-																								index
-																							]
-																								.image2,
-																							is_preview:
-																								! slider[
-																									index
-																								]
-																									.image2
-																									.is_preview,
-																						};
-
-																					onChangeSliderItem(
-																						index,
-																						image_01,
-																						'image1'
-																					);
-																					onChangeSliderItem(
-																						index,
-																						image_02,
-																						'image2'
-																					);
-																				} }
-																			/>
 																		</>
 																	) }
 
@@ -553,6 +441,46 @@ export default function Edit( { attributes, setAttributes } ) {
 															) }
 														/>
 													</MediaUploadCheck>
+
+													<hr />
+
+													<ToggleControl
+														__nextHasNoMarginBottom={
+															true
+														}
+														checked={
+															slider[
+																index
+															]
+																?.image2
+																?.is_preview
+														}
+														label="Использовать второе фото, как превью"
+														onChange={ (value) => {
+															const image_01 =
+																{
+																	...slider[index].image1,
+																	is_preview: !value,
+																};
+
+															const image_02 =
+																{
+																	...slider[index].image2,
+																	is_preview: value,
+																};
+
+															onChangeSliderItem(
+																index,
+																image_01,
+																'image1'
+															);
+															onChangeSliderItem(
+																index,
+																image_02,
+																'image2'
+															);
+														} }
+													/>
 												</details>
 											) }
 										</Draggable>

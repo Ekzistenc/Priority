@@ -45,6 +45,10 @@
 		},
 		"anchor": {
 			"type": "string"
+		},
+		"align": {
+			"type": "string",
+			"default": "full"
 		}
 	},
 	"supports": {
@@ -56,11 +60,6 @@
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"render": "file:./render.php",
-	"viewStyle": [
-		"glightbox"
-	],
-	"viewScript": [
-		"glightbox",
-		"flats"
-	]
+	"viewStyle": [ "glightbox" ],
+	"viewScript": [ "glightbox", "flats" ]
 }

@@ -1,7 +1,4 @@
-import {
-	useState,
-	useEffect
-} from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 
 import apiFetch from '@wordpress/api-fetch';
 
@@ -9,132 +6,146 @@ import {
 	SelectControl,
 	TextControl,
 	Button,
-	ProgressBar
+	ProgressBar,
 } from '@wordpress/components';
 
-import {
-	DragDropContext,
-	Droppable,
-	Draggable
-} from '@hello-pangea/dnd';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 
 import SNDMediaUpload from '../SNDMediaUpload';
 import './style.scss';
 
-export default function SNDSocList({ currentSocListId, onChangeSocListId, onChangeSocList }) {
-	const [lists, setLists] = useState([]); // Все списки соцсетей
-	const [socs, setSocs] = useState([]); // Соцсети выбранного списка
-	const [isSaving, setIsSaving] = useState(false);
-	const [isLoading, setIsLoading] = useState(true);
+export default function SNDSocList( {
+	currentSocListId,
+	onChangeSocListId,
+	onChangeSocList,
+} ) {
+	const [ lists, setLists ] = useState( [] ); // Все списки соцсетей
+	const [ socs, setSocs ] = useState( [] ); // Соцсети выбранного списка
+	const [ isSaving, setIsSaving ] = useState( false );
+	const [ isLoading, setIsLoading ] = useState( true );
 
 	// Загружаем все списки соцсетей
-	useEffect(() => {
-		apiFetch({ path: '/snd/v1/socials' }).then((data) => {
-			if (Array.isArray(data) && data.length > 0) {
-				setLists(data);
+	useEffect( () => {
+		apiFetch( { path: '/snd/v1/socials' } )
+			.then( ( data ) => {
+				if ( Array.isArray( data ) && data.length > 0 ) {
+					setLists( data );
 
-				if (!currentSocListId) {
-					onChangeSocListId(data[0].id); // выбираем первый, если атрибут пустой
-				}
-			} else {
-				setLists([]);
+					if ( ! currentSocListId ) {
+						onChangeSocListId( data[ 0 ].id ); // выбираем первый, если атрибут пустой
+					}
+				} else {
+					setLists( [] );
 
-				if (!currentSocListId) {
-					onChangeSocListId('new'); // новый список
+					if ( ! currentSocListId ) {
+						onChangeSocListId( 'new' ); // новый список
+					}
 				}
-			}
-		}).finally(() => {
-			setIsLoading(false);
-		});
-	}, []);
+			} )
+			.finally( () => {
+				setIsLoading( false );
+			} );
+	}, [] );
 
 	// Загружаем выбранный список соцсетей
-	useEffect(() => {
-		if (!currentSocListId || currentSocListId === 'new') {
-			setSocs([]);
+	useEffect( () => {
+		if ( ! currentSocListId || currentSocListId === 'new' ) {
+			setSocs( [] );
 			return;
 		}
 
-		setIsLoading(true);
-		apiFetch({ path: `/snd/v1/socials/${currentSocListId}` }).then((data) => {
-			setSocs(Array.isArray(data) ? data : []);
-		}).finally(() => {
-			setIsLoading(false);
-		});
-	}, [currentSocListId]);
+		setIsLoading( true );
+		apiFetch( { path: `/snd/v1/socials/${ currentSocListId }` } )
+			.then( ( data ) => {
+				setSocs( Array.isArray( data ) ? data : [] );
+			} )
+			.finally( () => {
+				setIsLoading( false );
+			} );
+	}, [ currentSocListId ] );
 
 	// Сохраняем выбранный список соцсетей
-	const saveSocs = (newSocs) => {
-		setIsSaving(true);
-		setSocs(newSocs);
+	const saveSocs = ( newSocs ) => {
+		setIsSaving( true );
+		setSocs( newSocs );
 
-		apiFetch({
-			path: `/snd/v1/socials/${currentSocListId}`,
+		apiFetch( {
+			path: `/snd/v1/socials/${ currentSocListId }`,
 			method: 'POST',
 			data: newSocs,
-		})
-			.finally(() => {
-				setIsSaving(false);
+		} ).finally( () => {
+			setIsSaving( false );
 
-				if (onChangeSocListId) {
-					onChangeSocListId(currentSocListId);
-				}
+			if ( onChangeSocListId ) {
+				onChangeSocListId( currentSocListId );
+			}
 
-				if (onChangeSocList) {
-					onChangeSocList(newSocs);
-				}
-			});
+			if ( onChangeSocList ) {
+				onChangeSocList( newSocs );
+			}
+		} );
 	};
 
 	// Сохранение нового списка соцсетей
 	const onSaveNewList = () => {
-		setIsSaving(true);
-		apiFetch({
+		setIsSaving( true );
+		apiFetch( {
 			path: '/snd/v1/socials',
 			method: 'POST',
-			data: { name: `Social #${Date.now()}`, items: socs },
-		}).then((newList) => {
-			setLists([...lists, newList]);
+			data: { name: `Social #${ Date.now() }`, items: socs },
+		} )
+			.then( ( newList ) => {
+				setLists( [ ...lists, newList ] );
 
-			if (onChangeSocListId) {
-				onChangeSocListId(newList.id);
-			}
+				if ( onChangeSocListId ) {
+					onChangeSocListId( newList.id );
+				}
 
-			if (onChangeSocList) {
-				onChangeSocList([]);
-			}
-		}).finally(() => setIsSaving(false));
+				if ( onChangeSocList ) {
+					onChangeSocList( [] );
+				}
+			} )
+			.finally( () => setIsSaving( false ) );
 	};
 
-	const onDeleteList = (listId) => {
-		if (!confirm('Are you sure you want to delete this list of social networks?')) return;
+	const onDeleteList = ( listId ) => {
+		if (
+			! confirm(
+				'Are you sure you want to delete this list of social networks?'
+			)
+		)
+			return;
 
-		setIsSaving(true);
+		setIsSaving( true );
 
-		apiFetch({ path: `/snd/v1/socials/${listId}`, method: 'DELETE' })
-			.then(() => {
-				const updatedLists = lists.filter(l => l.id !== listId);
-				setLists(updatedLists);
+		apiFetch( { path: `/snd/v1/socials/${ listId }`, method: 'DELETE' } )
+			.then( () => {
+				const updatedLists = lists.filter( ( l ) => l.id !== listId );
+				setLists( updatedLists );
 
-				if (currentSocListId === listId) {
-					const nextId = updatedLists.length ? updatedLists[0].id : 'new';
+				if ( currentSocListId === listId ) {
+					const nextId = updatedLists.length
+						? updatedLists[ 0 ].id
+						: 'new';
 
-					if (onChangeSocListId) {
-						onChangeSocListId(nextId);
+					if ( onChangeSocListId ) {
+						onChangeSocListId( nextId );
 					}
 
-					if (onChangeSocList) {
-						onChangeSocList(lists.find((l) => l.id === nextId)?.items || []);
+					if ( onChangeSocList ) {
+						onChangeSocList(
+							lists.find( ( l ) => l.id === nextId )?.items || []
+						);
 					}
 				}
-			})
-			.finally(() => setIsSaving(false));
+			} )
+			.finally( () => setIsSaving( false ) );
 	};
 
-	const onChangeSocsItem = (index, value, field) => {
-		const updatedSocs = [...socs];
-		updatedSocs[index][field] = value;
-		saveSocs(updatedSocs);
+	const onChangeSocsItem = ( index, value, field ) => {
+		const updatedSocs = [ ...socs ];
+		updatedSocs[ index ][ field ] = value;
+		saveSocs( updatedSocs );
 	};
 
 	const onClickAddSocsItem = () => {
@@ -147,67 +158,81 @@ export default function SNDSocList({ currentSocListId, onChangeSocListId, onChan
 				url: '',
 			},
 		};
-		const updatedSocs = [...socs, newItem];
-		saveSocs(updatedSocs);
+		const updatedSocs = [ ...socs, newItem ];
+		saveSocs( updatedSocs );
 	};
 
-	const onSocsDragEnd = (result) => {
-		if (!result.destination) return;
+	const onSocsDragEnd = ( result ) => {
+		if ( ! result.destination ) return;
 
-		const newSocs = Array.from(socs);
-		const [movedItem] = newSocs.splice(result.source.index, 1);
-		newSocs.splice(result.destination.index, 0, movedItem);
+		const newSocs = Array.from( socs );
+		const [ movedItem ] = newSocs.splice( result.source.index, 1 );
+		newSocs.splice( result.destination.index, 0, movedItem );
 
-		saveSocs(newSocs);
+		saveSocs( newSocs );
 	};
 
 	return (
-		<div className={`snd-soclist-panel ${isSaving ? 'snd-soclist-panel--saving' : ''}`}>
-			{isLoading && <ProgressBar className="snd-soclist-panel__progress-bar" />}
+		<div
+			className={ `snd-soclist-panel ${
+				isSaving ? 'snd-soclist-panel--saving' : ''
+			}` }
+		>
+			{ isLoading && (
+				<ProgressBar className="snd-soclist-panel__progress-bar" />
+			) }
 
-			{!isLoading && (
+			{ ! isLoading && (
 				<>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
 						className="snd-soclist-panel__select-list"
 						label="Select a list of social networks"
-						value={currentSocListId}
-						options={[
-							...lists.map((l) => ({
-								label: l.name || `Social  #${l.id}`,
+						value={ currentSocListId }
+						options={ [
+							...lists.map( ( l ) => ( {
+								label: l.name || `Social  #${ l.id }`,
 								value: l.id,
-							})),
+							} ) ),
 							{ label: 'Create a new list...', value: 'new' },
-						]}
-						onChange={(currentSocListId) => {
-							if (onChangeSocListId) {
-								onChangeSocListId(currentSocListId);
+						] }
+						onChange={ ( currentSocListId ) => {
+							if ( onChangeSocListId ) {
+								onChangeSocListId( currentSocListId );
 							}
 
-							if (currentSocListId === 'new') {
-								if (onChangeSocList) {
-									onChangeSocList([]);
+							if ( currentSocListId === 'new' ) {
+								if ( onChangeSocList ) {
+									onChangeSocList( [] );
 								}
 							} else {
-								setIsLoading(true);
-								apiFetch({ path: `/snd/v1/socials/${currentSocListId}` }).then((data) => {
-									if (onChangeSocList) {
-										onChangeSocList(Array.isArray(data) ? data : []);
-									}
-								}).finally(() => {
-									setIsLoading(false);
-								});
+								setIsLoading( true );
+								apiFetch( {
+									path: `/snd/v1/socials/${ currentSocListId }`,
+								} )
+									.then( ( data ) => {
+										if ( onChangeSocList ) {
+											onChangeSocList(
+												Array.isArray( data )
+													? data
+													: []
+											);
+										}
+									} )
+									.finally( () => {
+										setIsLoading( false );
+									} );
 							}
-						}}
+						} }
 					/>
 
-					{currentSocListId === 'new' ? (
+					{ currentSocListId === 'new' ? (
 						<Button
 							className="snd-soclist-panel__button-create-new-list"
 							variant="primary"
 							size="small"
-							onClick={onSaveNewList}
+							onClick={ onSaveNewList }
 						>
 							Create a new list
 						</Button>
@@ -217,141 +242,250 @@ export default function SNDSocList({ currentSocListId, onChangeSocListId, onChan
 								className="snd-soclist-panel__button-delete-list"
 								variant="secondary"
 								size="small"
-								isDestructive={true}
-								onClick={() => onDeleteList(currentSocListId)}
+								isDestructive={ true }
+								onClick={ () =>
+									onDeleteList( currentSocListId )
+								}
 							>
 								Delete the list
 							</Button>
 
-							<DragDropContext onDragEnd={onSocsDragEnd}>
+							<DragDropContext onDragEnd={ onSocsDragEnd }>
 								<Droppable droppableId="soclist-droppable">
-									{(provided) => (
+									{ ( provided ) => (
 										<div
-											{...provided.droppableProps}
-											ref={provided.innerRef}
+											{ ...provided.droppableProps }
+											ref={ provided.innerRef }
 											className="snd-soclist-repeater"
 										>
 											<label className="snd-soclist-repeater__label">
 												Social media list
 											</label>
 
-											{socs?.map((item, index) => (
+											{ socs?.map( ( item, index ) => (
 												<Draggable
-													key={item.id || index}
-													draggableId={`soc-${item.id || index}`}
-													index={index}
+													key={ item.id || index }
+													draggableId={ `soc-${
+														item.id || index
+													}` }
+													index={ index }
 												>
-													{(provided) => (
+													{ ( provided ) => (
 														<details
 															className="snd-soclist-repeater__item"
-															ref={provided.innerRef}
-															{...provided.draggableProps}
-															{...provided.dragHandleProps}
+															ref={
+																provided.innerRef
+															}
+															{ ...provided.draggableProps }
+															{ ...provided.dragHandleProps }
 														>
 															<summary>
 																<div className="snd-soclist-repeater__dragabble-element"></div>
 																<div className="snd-soclist-repeater__item-name">
-																	{item?.icon?.url ? <img src={item?.icon?.url} alt="" /> : null}
-																	<span>{item?.name ? item?.name : `Link ${index + 1}`}</span>
+																	{ item?.icon
+																		?.url ? (
+																		<img
+																			src={
+																				item
+																					?.icon
+																					?.url
+																			}
+																			alt=""
+																		/>
+																	) : null }
+																	<span>
+																		{ item?.name
+																			? item?.name
+																			: `Link ${
+																					index +
+																					1
+																			  }` }
+																	</span>
 																</div>
 
 																<Button
 																	className="is-secondary is-destructive is-small"
 																	title="Delete the link"
-																	onClick={() => {
-																		const updatedSocs = [...socs];
-																		updatedSocs.splice(index, 1);
-																		saveSocs(updatedSocs)
-																	}}
+																	onClick={ () => {
+																		const updatedSocs =
+																			[
+																				...socs,
+																			];
+																		updatedSocs.splice(
+																			index,
+																			1
+																		);
+																		saveSocs(
+																			updatedSocs
+																		);
+																	} }
 																></Button>
 															</summary>
 
 															<div className="snd-soclist-repeater__item-content">
 																<SNDMediaUpload
-																	onSelect={(media) => {
-																		const id = media?.id || 0;
-																		const mediaUrl = media?.sizes?.thumbnail?.url || media?.url || '';
-																		const type = media?.type || 'other';
-																		let newMedia = {};
+																	onSelect={ (
+																		media
+																	) => {
+																		const id =
+																			media?.id ||
+																			0;
+																		const mediaUrl =
+																			media
+																				?.sizes
+																				?.thumbnail
+																				?.url ||
+																			media?.url ||
+																			'';
+																		const type =
+																			media?.type ||
+																			'other';
+																		let newMedia =
+																			{};
 
-																		if (type === 'image') {
-																			newMedia = {
-																				...socs[index].icon,
-																				id,
-																				url: mediaUrl,
-																				alt: media?.alt || '',
-																				size: media?.size || 'thumbnail',
-																				sizes: media?.sizes || {},
-																				type: 'image'
-																			};
+																		if (
+																			type ===
+																			'image'
+																		) {
+																			newMedia =
+																				{
+																					...socs[
+																						index
+																					]
+																						.icon,
+																					id,
+																					url: mediaUrl,
+																					alt:
+																						media?.alt ||
+																						'',
+																					size:
+																						media?.size ||
+																						'thumbnail',
+																					sizes:
+																						media?.sizes ||
+																						{},
+																					type: 'image',
+																				};
 																		} else {
-																			newMedia = {
-																				...socs[index].icon,
-																				id,
-																				url: mediaUrl,
-																				filename: media?.filename || '',
-																				type: type
-																			};
+																			newMedia =
+																				{
+																					...socs[
+																						index
+																					]
+																						.icon,
+																					id,
+																					url: mediaUrl,
+																					filename:
+																						media?.filename ||
+																						'',
+																					type: type,
+																				};
 																		}
 
-																		onChangeSocsItem(index, newMedia, 'icon');
-																	}}
-																	allowedTypes={['image']}
-																	value={socs[index].icon.id}
-																	media={socs[index].icon}
-																	onChangeMedia={(image) => {
-																		onChangeSocsItem(index, image, 'icon');
-																	}}
+																		onChangeSocsItem(
+																			index,
+																			newMedia,
+																			'icon'
+																		);
+																	} }
+																	allowedTypes={ [
+																		'image',
+																	] }
+																	value={
+																		socs[
+																			index
+																		].icon
+																			.id
+																	}
+																	media={
+																		socs[
+																			index
+																		].icon
+																	}
+																	onChangeMedia={ (
+																		image
+																	) => {
+																		onChangeSocsItem(
+																			index,
+																			image,
+																			'icon'
+																		);
+																	} }
 																	label="Select icon"
 																	labelButton={
-																		socs[index]?.icon?.id ? 'Change the icon' : 'Select icon'
+																		socs[
+																			index
+																		]?.icon
+																			?.id
+																			? 'Change the icon'
+																			: 'Select icon'
 																	}
 																/>
 
 																<TextControl
 																	label="Name"
-																	value={item.name}
-																	onChange={(value) =>
-																		onChangeSocsItem(index, value, 'name')
+																	value={
+																		item.name
 																	}
-																	__nextHasNoMarginBottom={true}
+																	onChange={ (
+																		value
+																	) =>
+																		onChangeSocsItem(
+																			index,
+																			value,
+																			'name'
+																		)
+																	}
+																	__nextHasNoMarginBottom={
+																		true
+																	}
 																	__next40pxDefaultSize
 																/>
 
 																<TextControl
 																	label="Link"
 																	type="url"
-																	value={item.link}
-																	onChange={(value) =>
-																		onChangeSocsItem(index, value, 'link')
+																	value={
+																		item.link
 																	}
-																	__nextHasNoMarginBottom={true}
+																	onChange={ (
+																		value
+																	) =>
+																		onChangeSocsItem(
+																			index,
+																			value,
+																			'link'
+																		)
+																	}
+																	__nextHasNoMarginBottom={
+																		true
+																	}
 																	__next40pxDefaultSize
 																/>
 															</div>
 														</details>
-													)}
+													) }
 												</Draggable>
-											))}
+											) ) }
 
-											{provided.placeholder}
+											{ provided.placeholder }
 
 											<Button
 												className="snd-soclist-repeater__button-add-item"
 												variant="primary"
 												size="small"
-												onClick={onClickAddSocsItem}
+												onClick={ onClickAddSocsItem }
 											>
 												Add a link
 											</Button>
 										</div>
-									)}
+									) }
 								</Droppable>
 							</DragDropContext>
 						</>
-					)}
+					) }
 				</>
-			)}
+			) }
 		</div>
 	);
 }

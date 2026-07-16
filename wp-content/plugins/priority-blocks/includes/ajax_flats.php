@@ -38,6 +38,8 @@ function snd_ajax_flats()
 		]);
 	}
 
+	$cardTextButton = !empty($_POST['cardTextButton']) ? esc_html($_POST['cardTextButton']) : 'Подробнее';
+
 	global $post;
 	ob_start();
 
@@ -77,8 +79,8 @@ function snd_ajax_flats()
 				<p><?php echo strip_tags($content); ?></p>
 			<?php endif; ?>
 
-			<a class="sd-modal-link" data-title="<?php echo esc_attr(get_the_title()); ?>">
-				Оставить заявку
+			<a class="sd-modal-link-l" data-id="<?php echo $post_id; ?>">
+				<?php echo $cardTextButton; ?>
 			</a>
 		</div>
 <?php endforeach;

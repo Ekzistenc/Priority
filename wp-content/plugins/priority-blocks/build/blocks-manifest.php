@@ -95,11 +95,65 @@ return array(
 			'align' => array(
 				'type' => 'string',
 				'default' => 'full'
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'anchor' => true,
+			'align' => true
+		),
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => array(
+			'file:./style-index.css'
+		),
+		'render' => 'file:./render.php'
+	),
+	'about-grid-item' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'snd/about-grid-item',
+		'version' => '0.1.0',
+		'title' => 'Проект',
+		'category' => 'snd-blocks',
+		'icon' => 'plus',
+		'parent' => array(
+			'snd/about-grid'
+		),
+		'example' => array(
+			'viewportWidth' => 1200
+		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
 			),
-			'projects' => array(
-				'type' => 'array',
+			'title' => array(
+				'type' => 'string',
+				'default' => 'Название проекта'
+			),
+			'description' => array(
+				'type' => 'string',
+				'default' => 'Описание проекта'
+			),
+			'image' => array(
+				'type' => 'object',
 				'default' => array(
-					
+					'id' => 0,
+					'url' => '',
+					'alt' => '',
+					'size' => 'large',
+					'sizes' => array(
+						
+					)
+				)
+			),
+			'link' => array(
+				'type' => 'object',
+				'default' => array(
+					'id' => 0,
+					'url' => '',
+					'target' => true
 				)
 			)
 		),
@@ -150,7 +204,7 @@ return array(
 		'name' => 'snd/breadcrumbs',
 		'version' => '0.1.0',
 		'title' => 'Хлебные крошки',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'ellipsis',
 		'example' => array(
 			
@@ -159,6 +213,12 @@ return array(
 			'html' => false,
 			'anchor' => true,
 			'align' => true
+		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			)
 		),
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
@@ -177,6 +237,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title_01' => array(
 				'type' => 'string',
 				'default' => 'Запишитесь на экскурсию'
@@ -248,6 +312,10 @@ return array(
 			'viewportWidth' => 1200
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Оставьте компромиссы в прошлом. Привилегии — они в настоящем.'
@@ -289,6 +357,10 @@ return array(
 			'viewportWidth' => 1200
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Контакты'
@@ -367,6 +439,10 @@ return array(
 			'viewportWidth' => 1200
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Вид на башню Priority снаружи'
@@ -402,12 +478,16 @@ return array(
 		'name' => 'snd/footer',
 		'version' => '0.1.0',
 		'title' => 'FOOTER',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'editor-table',
 		'example' => array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'number_phone' => array(
 				'type' => 'string',
 				'default' => '+7 (999) 999-99-99'
@@ -462,12 +542,16 @@ return array(
 		'name' => 'snd/header',
 		'version' => '0.1.0',
 		'title' => 'HEADER',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'menu-alt3',
 		'example' => array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'number_phone' => array(
 				'type' => 'string',
 				'default' => '+7 (999) 999-99-99'
@@ -513,12 +597,16 @@ return array(
 		'name' => 'snd/header-page',
 		'version' => '0.1.0',
 		'title' => 'HEADER for Pages',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'menu-alt2',
 		'example' => array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'number_phone' => array(
 				'type' => 'string',
 				'default' => '+7 (999) 999-99-99'
@@ -585,6 +673,10 @@ return array(
 			'viewportWidth' => 1200
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'category' => array(
 				'type' => 'string',
 				'default' => ''
@@ -670,6 +762,10 @@ return array(
 			),
 			'anchor' => array(
 				'type' => 'string'
+			),
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
 			)
 		),
 		'supports' => array(
@@ -715,7 +811,7 @@ return array(
 			),
 			'title_02' => array(
 				'type' => 'string',
-				'default' => 'бизнес-класса в&nbsp;братске',
+				'default' => 'бизнес-класса<br>в&nbsp;Братске',
 				'selector' => 'span'
 			),
 			'subtitle' => array(
@@ -726,7 +822,7 @@ return array(
 				'type' => 'object',
 				'default' => array(
 					'name' => 'Выбрать квартиру',
-					'href' => '/',
+					'href' => '/#layouts',
 					'target' => false
 				)
 			),
@@ -736,7 +832,7 @@ return array(
 					'id' => 0,
 					'url' => '',
 					'alt' => '',
-					'size' => 'full'
+					'size' => 'medium'
 				)
 			),
 			'image' => array(
@@ -745,7 +841,7 @@ return array(
 					'id' => 0,
 					'url' => '',
 					'alt' => '',
-					'size' => 'large',
+					'size' => '2048x2048',
 					'sizes' => array(
 						
 					)
@@ -844,6 +940,10 @@ return array(
 			'showMap' => array(
 				'type' => 'boolean',
 				'default' => true
+			),
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
 			)
 		),
 		'supports' => array(
@@ -870,9 +970,13 @@ return array(
 		'name' => 'snd/modal',
 		'version' => '0.1.0',
 		'title' => 'Модальное окно',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'button',
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'image_logo' => array(
 				'type' => 'object',
 				'default' => array(
@@ -914,7 +1018,7 @@ return array(
 		'name' => 'snd/news',
 		'version' => '0.1.0',
 		'title' => 'Новости',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'grid-view',
 		'example' => array(
 			
@@ -923,6 +1027,12 @@ return array(
 			'html' => false,
 			'anchor' => true,
 			'align' => true
+		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			)
 		),
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
@@ -935,7 +1045,7 @@ return array(
 		'name' => 'snd/preloader',
 		'version' => '0.1.0',
 		'title' => 'Прелоадер',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'welcome-view-site',
 		'example' => array(
 			
@@ -944,6 +1054,12 @@ return array(
 			'html' => false,
 			'align' => true,
 			'anchor' => true
+		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			)
 		),
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
@@ -962,6 +1078,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title_01' => array(
 				'type' => 'string',
 				'default' => 'Гармония —'
@@ -1000,6 +1120,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title_01' => array(
 				'type' => 'string',
 				'default' => 'Эта Цель — быть лучшим.'
@@ -1032,7 +1156,7 @@ return array(
 		'name' => 'snd/single-new',
 		'version' => '0.1.0',
 		'title' => 'Обертка новости',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'visibility',
 		'example' => array(
 			
@@ -1041,6 +1165,12 @@ return array(
 			'html' => false,
 			'anchor' => true,
 			'align' => true
+		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			)
 		),
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
@@ -1052,7 +1182,7 @@ return array(
 		'name' => 'snd/single-new-grid',
 		'version' => '0.1.0',
 		'title' => 'Колонки новости',
-		'category' => 'snd-blocks',
+		'category' => 'snd-theme',
 		'icon' => 'align-left',
 		'example' => array(
 			
@@ -1061,6 +1191,10 @@ return array(
 			'snd/single-new'
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'text' => array(
 				'type' => 'string',
 				'default' => ''
@@ -1091,6 +1225,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Башня «Первый Priority»'
@@ -1138,6 +1276,10 @@ return array(
 			'viewportWidth' => 1200
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Видеогалерея'
@@ -1176,6 +1318,10 @@ return array(
 			'align' => true
 		),
 		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Вы разбираетесь в жизни.'
@@ -1215,6 +1361,7 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php',
 		'viewScript' => array(
 			'glightbox',
 			'file:./view.js'

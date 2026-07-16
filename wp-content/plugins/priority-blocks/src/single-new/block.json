@@ -4,13 +4,19 @@
 	"name": "snd/single-new",
 	"version": "0.1.0",
 	"title": "Обертка новости",
-	"category": "snd-blocks",
+	"category": "snd-theme",
 	"icon": "visibility",
 	"example": {},
 	"supports": {
 		"html": false,
 		"anchor": true,
 		"align": true
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
 	},
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
